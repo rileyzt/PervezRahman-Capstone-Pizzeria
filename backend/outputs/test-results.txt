@@ -1,0 +1,29 @@
+PASS tests/app.test.js
+  calculateBill - Positive Cases
+    √ Should correctly calculate bill for valid items (6 ms)
+    √ Should calculate bill for a single item (1 ms)
+  calculateBill - Negative Cases
+    √ Should return zero totals for empty cart (1 ms)
+    √ Should handle zero-priced items (1 ms)
+    √ Should handle negative price (system error scenario) (2 ms)
+  validateEmail
+    √ Positive: Should accept valid email format (2 ms)
+    √ Negative: Should reject invalid email format (1 ms)
+  validatePassword
+    √ Positive: Should accept password with 6 or more characters (1 ms)
+    √ Negative: Should reject password shorter than 6 characters (1 ms)
+    √ Negative: Should reject null or undefined password (1 ms)
+  getStatusMessage
+    √ Positive: Should return correct message for valid statuses (2 ms)
+    √ Negative: Should return default pending message for unknown status (1 ms)
+  GET /api/menu
+    √ Positive: Should return 200 and an array of menu items (924 ms)
+  POST /api/auth/login
+    √ Negative: Should return 401 for wrong password (191 ms)
+    √ Negative: Should return 401 for non-existent email (62 ms)
+
+Test Suites: 1 passed, 1 total
+Tests:       15 passed, 15 total
+Snapshots:   0 total
+Time:        2.611 s, estimated 4 s
+Ran all test suites.

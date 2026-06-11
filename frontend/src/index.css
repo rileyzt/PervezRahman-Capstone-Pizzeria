@@ -1,0 +1,186 @@
+/* =====================================================
+   PIZZERIA — Custom Theme (overrides Bootstrap defaults)
+   Netflix-style deep black + bright red
+   Bootstrap is imported in main.jsx BEFORE this file
+   so our styles here override Bootstrap defaults
+   =====================================================*/
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap');
+
+/* Override Bootstrap CSS variables with our theme */
+:root,
+[data-bs-theme="dark"] {
+  --bs-body-bg: #0A0A0A;
+  --bs-body-color: #ffffff;
+  --bs-danger: #E50914;
+  --bs-danger-rgb: 229, 9, 20;
+  --bs-dark: #141414;
+  --bs-dark-rgb: 20, 20, 20;
+  --bs-border-color: #1C1C1C;
+  --bs-card-bg: #141414;
+  --bs-card-border-color: #1C1C1C;
+  --bs-secondary-color: #8C8C8C;
+  --bs-link-color: #E50914;
+  --bs-font-sans-serif: 'Inter', 'Segoe UI', sans-serif;
+}
+
+body {
+  font-family: 'Inter', 'Segoe UI', sans-serif;
+  background-color: #0A0A0A;
+  color: #ffffff;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Heading font */
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Outfit', 'Inter', sans-serif;
+}
+
+/* Override Bootstrap card */
+.card {
+  background-color: #141414;
+  border-color: #1C1C1C;
+}
+
+/* Override Bootstrap form inputs */
+.form-control {
+  background-color: #1C1C1C;
+  border-color: #333;
+  color: #fff;
+}
+.form-control:focus {
+  background-color: #1C1C1C;
+  border-color: #E50914;
+  color: #fff;
+  box-shadow: 0 0 0 0.2rem rgba(229, 9, 20, 0.15);
+}
+.form-control::placeholder {
+  color: #666;
+}
+.form-select {
+  background-color: #1C1C1C;
+  border-color: #333;
+  color: #fff;
+}
+
+/* Override Bootstrap btn-danger to our red */
+.btn-danger {
+  --bs-btn-bg: #E50914;
+  --bs-btn-border-color: #E50914;
+  --bs-btn-hover-bg: #FF0A16;
+  --bs-btn-hover-border-color: #FF0A16;
+  --bs-btn-active-bg: #c00812;
+}
+
+/* Dark outline button */
+.btn-outline-secondary {
+  --bs-btn-color: #B3B3B3;
+  --bs-btn-border-color: #333;
+  --bs-btn-hover-bg: #1C1C1C;
+  --bs-btn-hover-color: #fff;
+}
+
+/* Dark button (for category tabs, etc.) */
+.btn-dark {
+  --bs-btn-bg: #141414;
+  --bs-btn-border-color: #1C1C1C;
+  --bs-btn-color: #888;
+  --bs-btn-hover-bg: #1C1C1C;
+  --bs-btn-hover-color: #fff;
+}
+
+/* Override navbar */
+.navbar {
+  background: rgba(0, 0, 0, 0.92) !important;
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+
+/* Override nav links */
+.nav-link {
+  color: #B3B3B3 !important;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+.nav-link:hover {
+  color: #fff !important;
+}
+
+/* Badge overrides */
+.badge-pending { background: rgba(255,193,7,0.15); color: #FFC107; }
+.badge-accepted { background: rgba(33,150,243,0.15); color: #2196F3; }
+.badge-delivered { background: rgba(70,211,105,0.15); color: #46D369; }
+.badge-rejected { background: rgba(229,9,20,0.15); color: #E50914; }
+
+/* Logo style */
+.brand-logo {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: #E50914 !important;
+  letter-spacing: 2px;
+  font-family: 'Outfit', sans-serif;
+  text-decoration: none;
+}
+
+/* Netflix red text */
+.text-brand { color: #E50914 !important; }
+.bg-brand { background-color: #E50914 !important; }
+
+/* Deep background */
+.bg-deeper { background-color: #0A0A0A !important; }
+.bg-card { background-color: #141414 !important; }
+.bg-card-hover { background-color: #1C1C1C !important; }
+
+/* Border custom */
+.border-dark-custom { border-color: #1C1C1C !important; }
+
+/* Success green */
+.text-success-custom { color: #46D369 !important; }
+
+/* Admin gold link */
+.nav-link-admin { color: #FFD700 !important; font-weight: 600; }
+
+/* Category tab active */
+.tab-active {
+  background-color: #E50914 !important;
+  border-color: #E50914 !important;
+  color: #fff !important;
+  font-weight: 600;
+}
+
+/* Menu card hover */
+.menu-card:hover {
+  border-color: #E50914 !important;
+  transform: translateY(-4px);
+  transition: all 0.25s ease;
+}
+.menu-card {
+  transition: all 0.25s ease;
+}
+
+/* Status dot */
+.status-dot {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+.status-dot-active { background: #E50914; }
+.status-dot-inactive { background: #333; }
+
+/* Responsive */
+@media (max-width: 768px) {
+  .hero-title { font-size: 2.2rem !important; }
+}
+@media (max-width: 480px) {
+  .hero-title { font-size: 1.8rem !important; }
+  .navbar .nav-link { font-size: 0.75rem !important; }
+}
+
+/* Print — for bill */
+@media print {
+  .navbar, footer, .btn, .no-print { display: none !important; }
+  body { background: #fff !important; color: #000 !important; }
+  .card { background: #fff !important; border: 1px solid #ddd !important; }
+  * { color: #000 !important; }
+}
