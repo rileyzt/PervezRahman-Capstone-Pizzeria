@@ -1,6 +1,4 @@
-// =====================================================
-// SERVER.JS — Entry Point of the Backend Application
-// =====================================================
+// SERVER.JS - Entry Point of the Backend Application
 // PDF Reference: "Create a Node.js project" + "Set up Express.js to handle routing and middleware"
 //
 // THIS FILE DOES:
@@ -9,17 +7,6 @@
 // 3. Sets up Express middleware (CORS, JSON parsing)
 // 4. Mounts all route files (auth, menu, orders, payment, admin)
 // 5. Starts the server on the configured port
-//
-// WHY Express?
-//   - Most popular Node.js web framework, huge community support
-//   - Simple routing, middleware system, easy to learn
-//   - Alternative: Fastify (faster performance) or Koa (lighter, by Express creators)
-//
-// WHY this file is kept minimal?
-//   - Single Responsibility: server.js only "wires things together"
-//   - Actual logic lives in controllers/, routes/, middleware/
-//   - Makes it easy to test individual parts without starting the whole server
-// =====================================================
 
 const express = require('express');
 const cors = require('cors');
@@ -34,16 +21,14 @@ connectDB();
 
 const app = express();
 
-// ----- MIDDLEWARE -----
-// cors() → Allows frontend (running on port 5173) to talk to backend (port 5000)
-// express.json() → Parses incoming JSON request bodies (e.g., login form data)
+// MIDDLEWARE   
+// cors() - Allows frontend (running on port 5173 or whatever assigned by vercel) to talk to backend (port 5000 or whatever asisgned by render)
+// express.json() - Parses incoming JSON request bodies for example login form data
 app.use(cors());
 app.use(express.json());
 
-// ----- ROUTES -----
+// ROUTES 
 // Each route file handles a group of related endpoints
-// PDF: "Ensure APIs are RESTful and follow best practices"
-
 // Auth routes: register, login, get profile
 // PDF: "CRUD on User and Admin (login, logout, register)"
 app.use('/api/auth', require('./routes/authRoutes'));
@@ -71,10 +56,10 @@ app.use('/api/admin', require('./routes/adminRoutes'));
 // Extra feature: Gemini AI integration
 app.use('/api/ai', require('./routes/aiRoutes'));
 
-// ----- START SERVER -----
+//START SERVER 
 const PORT = process.env.PORT || 5000;
 
-// Only start listening when running directly (not when imported by tests)
+
 if (require.main === module) {
   app.listen(PORT, () => {
     console.log(`Pizzeria server running on port ${PORT}`);

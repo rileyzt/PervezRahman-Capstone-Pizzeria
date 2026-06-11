@@ -1,0 +1,72 @@
+[{
+  "_id": {
+    "$oid": "6a2645d8c1d0859c23fbd8cc"
+  },
+  "order": {
+    "$oid": "6a2645b2c1d0859c23fbd8cb"
+  },
+  "user": {
+    "$oid": "6a24fa8377cd18c35cc48f81"
+  },
+  "reviewText": "gREAT",
+  "rating": 5,
+  "sentiment": "positive",
+  "createdAt": {
+    "$date": "2026-06-08T04:32:24.799Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a28fc8f294eb3a4a1018713"
+  },
+  "order": {
+    "$oid": "6a28fc53294eb3a4a1018712"
+  },
+  "user": {
+    "$oid": "6a21218e0a35284e2affe4a4"
+  },
+  "reviewText": "GOOD",
+  "rating": 5,
+  "sentiment": "positive",
+  "createdAt": {
+    "$date": "2026-06-10T05:56:31.513Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a293dbef5317e7b5eb6860a"
+  },
+  "order": {
+    "$oid": "6a293da3f5317e7b5eb68609"
+  },
+  "user": {
+    "$oid": "6a293d8af5317e7b5eb68608"
+  },
+  "reviewText": "GREAT",
+  "rating": 5,
+  "sentiment": "positive",
+  "createdAt": {
+    "$date": "2026-06-10T10:34:38.438Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a2aa42f0302d0d20a60e3fb"
+  },
+  "order": {
+    "$oid": "6a2aa3a10302d0d20a60e3fa"
+  },
+  "user": {
+    "$oid": "6a21218e0a35284e2affe4a4"
+  },
+  "reviewText": "GREAT",
+  "rating": 5,
+  "sentiment": "positive",
+  "createdAt": {
+    "$date": "2026-06-11T12:03:59.116Z"
+  },
+  "__v": 0
+}]

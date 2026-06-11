@@ -1,4 +1,4 @@
-// ADMIN — MANAGE ORDERS — using Bootstrap tabs and card classes
+// ADMIN - MANAGE ORDERS - CARDS
 
 import { useState, useEffect } from 'react';
 import { getAllOrders, updateOrderStatus } from '../../services/api';
@@ -25,7 +25,6 @@ const ManageOrders = () => {
     <div className="container py-5" style={{ maxWidth: '750px' }}>
       <h1 className="fw-bold text-white mb-4">Manage Orders</h1>
 
-      {/* Filter tabs */}
       <div className="d-flex flex-wrap gap-2 mb-4">
         {['all', 'pending', 'accepted', 'preparing', 'out_for_delivery', 'delivered'].map((f) => (
           <button key={f} className={filter === f ? 'btn btn-danger btn-sm tab-active' : 'btn btn-dark btn-sm'} onClick={() => setFilter(f)} style={{ textTransform: 'capitalize' }}>

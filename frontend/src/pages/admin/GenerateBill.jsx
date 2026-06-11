@@ -1,5 +1,4 @@
-// ADMIN — GENERATE BILL — using Bootstrap table and card classes
-
+// ADMIN - GENERATE BILL
 import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { generateBill } from '../../services/api';
@@ -21,7 +20,7 @@ const GenerateBill = () => {
   return (
     <div className="container py-5" style={{ maxWidth: '480px' }}>
       <div className="card border-dark-custom p-4">
-        {/* Header */}
+      
         <div className="text-center mb-3">
           <h4 className="brand-logo mb-0" style={{ letterSpacing: '3px' }}>PIZZERIA</h4>
           <small className="text-secondary">Fresh. Hot. Delivered.</small>
@@ -29,7 +28,7 @@ const GenerateBill = () => {
 
         <hr style={{ borderColor: '#2A2A2A' }} />
 
-        {/* Bill info */}
+        
         <div className="d-flex justify-content-between mb-1"><small className="text-secondary">Bill No</small><small className="text-white">{bill.billNumber}</small></div>
         <div className="d-flex justify-content-between mb-1"><small className="text-secondary">Date</small><small className="text-white">{new Date(bill.date).toLocaleDateString('en-IN')}</small></div>
         <div className="d-flex justify-content-between mb-1"><small className="text-secondary">Customer</small><small className="text-white">{bill.customer.name}</small></div>
@@ -37,7 +36,7 @@ const GenerateBill = () => {
 
         <hr style={{ borderColor: '#2A2A2A' }} />
 
-        {/* Items table */}
+        
         <table className="table table-dark table-borderless mb-0" style={{ background: 'transparent' }}>
           <thead>
             <tr className="text-secondary" style={{ fontSize: '0.8rem' }}>
@@ -58,7 +57,6 @@ const GenerateBill = () => {
 
         <hr style={{ borderColor: '#2A2A2A' }} />
 
-        {/* Bill breakdown */}
         <div className="d-flex justify-content-between mb-1"><span className="text-secondary">Subtotal</span><span className="text-white">₹{bill.subtotal}</span></div>
         <div className="d-flex justify-content-between mb-1"><span className="text-success-custom">Discount ({bill.discountPercent}%)</span><span className="text-success-custom">-₹{bill.discountAmount}</span></div>
         <div className="d-flex justify-content-between mb-1"><span className="text-secondary">GST ({bill.gstPercent}%)</span><span className="text-white">+₹{bill.gstAmount}</span></div>
@@ -70,7 +68,6 @@ const GenerateBill = () => {
           <span className="fw-bold text-brand" style={{ fontSize: '1.2rem' }}>₹{bill.totalAmount}</span>
         </div>
 
-        {/* Payment info */}
         <div className="d-flex justify-content-between mb-1">
           <small className="text-secondary">Payment</small>
           <small className={bill.paymentStatus === 'completed' ? 'text-success-custom' : 'text-warning'}>{bill.paymentStatus === 'completed' ? 'PAID' : 'PENDING'}</small>

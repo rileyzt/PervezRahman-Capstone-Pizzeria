@@ -1,6 +1,4 @@
-// =====================================================
-// AUTH CONTEXT — Shares login state across the whole app
-// =====================================================
+// AUTH CONTEXT - Shares login state across the whole app
 
 import { createContext, useContext, useState, useEffect } from 'react';
 import { loginUser, registerUser, getProfile } from '../services/api';
@@ -8,8 +6,7 @@ import { loginUser, registerUser, getProfile } from '../services/api';
 // Create a "box" that holds auth data and can be accessed from any component
 const AuthContext = createContext();
 
-// Custom hook — shortcut to use auth data in any component
-// Usage: const { user, login, logout } = useAuth();
+// Custom hook - shortcut to use auth data in any component
 export const useAuth = () => useContext(AuthContext);
 
 export const AuthProvider = ({ children }) => {
@@ -23,11 +20,11 @@ export const AuthProvider = ({ children }) => {
     const checkLogin = async () => {
       if (token) {
         try {
-          // Token exists — ask the server "who am I?"
+          // Token exists - ask the server "who am I?"
           const response = await getProfile();
           setUser(response.data);
         } catch (error) {
-          // Token is expired or invalid — clear it
+          // Token is expired or invalid - clear it
           localStorage.removeItem('token');
           setToken(null);
           setUser(null);
@@ -39,12 +36,12 @@ export const AuthProvider = ({ children }) => {
     checkLogin();
   }, []);
 
-  // ---- LOGIN FUNCTION ----
+  //LOGIN FUNCTION 
   const login = async (email, password) => {
     const response = await loginUser({ email, password });
     const data = response.data;
 
-    // Save token to localStorage (survives browser refresh)
+    // Save token to localStorage (refresh avoid)
     localStorage.setItem('token', data.token);
     setToken(data.token);
     setUser(data.user);
@@ -52,7 +49,7 @@ export const AuthProvider = ({ children }) => {
     return data.user; // Return user so we know the role
   };
 
-  // ---- REGISTER FUNCTION ----
+  // REGISTER FUNCTION
   const register = async (name, email, password, phone) => {
     const response = await registerUser({ name, email, password, phone });
     const data = response.data;
@@ -65,15 +62,13 @@ export const AuthProvider = ({ children }) => {
     return data.user;
   };
 
-  // ---- LOGOUT FUNCTION ----
+  // LOGOUT FUNCTION 
   const logout = () => {
-    // Just remove the token. That's it.
     localStorage.removeItem('token');
     setToken(null);
     setUser(null);
   };
 
-  // Share everything with the rest of the app
   return (
     <AuthContext.Provider
       value={{

@@ -1,8 +1,8 @@
-// ADMIN CONTROLLER — revenue, billing, stats
+// ADMIN CONTROLLER - revenue, billing, stats
 
 const Order = require('../models/Order');
 
-// GET /api/admin/revenue — monthly revenue
+// GET /api/admin/revenue - monthly revenue
 const getMonthlyRevenue = async (req, res) => {
   try {
     const orders = await Order.find({ status: 'delivered', paymentStatus: 'completed' });
@@ -16,7 +16,6 @@ const getMonthlyRevenue = async (req, res) => {
       totalDiscount = totalDiscount + (orders[i].discountAmount || 0);
       totalGST = totalGST + (orders[i].gstAmount || 0);
     }
-
     res.json({
       totalRevenue,
       totalDiscount,
@@ -28,17 +27,13 @@ const getMonthlyRevenue = async (req, res) => {
     res.status(500).json({ message: 'Something went wrong', error: error.message });
   }
 };
-
-// GET /api/admin/bill/:orderId — generate bill for an order
+// GET /api/admin/bill/:orderId - generate bill for an order
 const generateBill = async (req, res) => {
   try {
     const order = await Order.findById(req.params.orderId).populate('user', 'name email phone');
-
     if (!order) {
       return res.status(404).json({ message: 'Order not found' });
     }
-
-    // formatted bill (DTO)
     const bill = {
       billNumber: 'BILL-' + order._id.toString().slice(-6).toUpperCase(),
       orderId: order._id,
@@ -66,14 +61,13 @@ const generateBill = async (req, res) => {
       deliveryMode: order.deliveryMode,
       status: order.status
     };
-
     res.json(bill);
   } catch (error) {
     res.status(500).json({ message: 'Something went wrong', error: error.message });
   }
 };
 
-// GET /api/admin/stats — dashboard stats
+// GET /api/admin/stats - dashboard stats
 const getDashboardStats = async (req, res) => {
   try {
     const orders = await Order.find();

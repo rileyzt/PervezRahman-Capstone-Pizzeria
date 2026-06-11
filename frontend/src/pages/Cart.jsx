@@ -1,5 +1,4 @@
-// CART PAGE — using Bootstrap card and button classes
-
+// CART PAGE 
 import { useNavigate } from 'react-router-dom';
 import { useCart } from '../context/CartContext';
 import CartItem from '../components/CartItem';
@@ -24,14 +23,12 @@ const Cart = () => {
     <div className="container py-5" style={{ maxWidth: '700px' }}>
       <h1 className="fw-bold text-white mb-4">Your Cart</h1>
 
-      {/* Cart items */}
+     
       <div className="mb-4">
         {cartItems.map((item) => (
           <CartItem key={item._id} item={item} />
         ))}
       </div>
-
-      {/* Summary */}
       <div className="card border-dark-custom p-4">
         <div className="d-flex justify-content-between mb-2">
           <span className="text-secondary">Items</span>

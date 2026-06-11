@@ -1,0 +1,300 @@
+[{
+  "_id": {
+    "$oid": "6a25165ebe46ea65a0babbdc"
+  },
+  "name": "Italian Margherita",
+  "description": "Fresh basil, sweet tomato, and melted mozzarella atop a perfectly crisp Italian crust.",
+  "price": 899,
+  "category": "pizza",
+  "image": "/images/margherita.jpg",
+  "isAvailable": true,
+  "createdBy": {
+    "$oid": "6a21218e0a35284e2affe4a4"
+  },
+  "createdAt": {
+    "$date": "2026-06-07T06:57:34.494Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a2617f5a621d5c61d4f2267"
+  },
+  "name": "Coke",
+  "description": "Chilled classic carbonated soft drink.",
+  "price": 70,
+  "category": "beverages",
+  "image": "/images/coke.jpg",
+  "isAvailable": true,
+  "createdAt": {
+    "$date": "2026-06-08T01:16:37.003Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a2617f5a621d5c61d4f2269"
+  },
+  "name": "Stuffed Garlic Bread",
+  "description": "A delicious, freshly prepared Stuffed Garlic Bread made with premium ingredients in our traditional stone oven.",
+  "price": 199,
+  "category": "sides",
+  "image": "/images/garlic_bread.jpg",
+  "isAvailable": true,
+  "createdAt": {
+    "$date": "2026-06-08T01:16:37.151Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a2a2f9d7b01bbfe60c61876"
+  },
+  "name": "Pepperoni pizza",
+  "description": "Melted mozzarella, zesty sauce, and spicy pepperoni sizzling on a golden, crispy crust.",
+  "price": 999,
+  "category": "pizza",
+  "image": "/images/pepperoni.jpg",
+  "isAvailable": true,
+  "createdBy": {
+    "$oid": "6a21218e0a35284e2affe4a4"
+  },
+  "createdAt": {
+    "$date": "2026-06-11T03:46:37.332Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a2a2fcb7b01bbfe60c61877"
+  },
+  "name": "Farmhouse veggie pizza",
+  "description": "Farm-fresh veggies and creamy mozzarella, bursting with wholesome flavor on a rustic crust.",
+  "price": 895,
+  "category": "pizza",
+  "image": "/images/farmhouse.jpg",
+  "isAvailable": true,
+  "createdBy": {
+    "$oid": "6a21218e0a35284e2affe4a4"
+  },
+  "createdAt": {
+    "$date": "2026-06-11T03:47:23.617Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a2a2ff17b01bbfe60c61878"
+  },
+  "name": "BBQ chicken pizza",
+  "description": "Sweet and smoky BBQ chicken, red onions, and gooey mozzarella on a crispy crust.",
+  "price": 1199,
+  "category": "pizza",
+  "image": "/images/bbq_chicken.jpg",
+  "isAvailable": true,
+  "createdBy": {
+    "$oid": "6a21218e0a35284e2affe4a4"
+  },
+  "createdAt": {
+    "$date": "2026-06-11T03:48:01.470Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a2a300d7b01bbfe60c61879"
+  },
+  "name": "Paneer tikka pizza",
+  "description": "Smoky paneer tikka, vibrant spices, and gooey cheese on a perfectly baked crust.",
+  "price": 799,
+  "category": "pizza",
+  "image": "/images/paneer_tikka.jpg",
+  "isAvailable": true,
+  "createdBy": {
+    "$oid": "6a21218e0a35284e2affe4a4"
+  },
+  "createdAt": {
+    "$date": "2026-06-11T03:48:29.861Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a2a30637b01bbfe60c6187a"
+  },
+  "name": "Loaded cheese fries",
+  "description": "Golden fries dripping with gooey melted cheese, crispy pepperoni, and fresh jalapeños.",
+  "price": 179,
+  "category": "sides",
+  "image": "/images/cheesy_fries.jpg",
+  "isAvailable": true,
+  "createdBy": {
+    "$oid": "6a21218e0a35284e2affe4a4"
+  },
+  "createdAt": {
+    "$date": "2026-06-11T03:49:55.784Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a2a308c7b01bbfe60c6187b"
+  },
+  "name": "Chicken wings",
+  "description": "Golden, crispy, and juicy chicken wings, seasoned to perfection.",
+  "price": 499,
+  "category": "sides",
+  "image": "/images/chicken_wings.jpg",
+  "isAvailable": true,
+  "createdBy": {
+    "$oid": "6a21218e0a35284e2affe4a4"
+  },
+  "createdAt": {
+    "$date": "2026-06-11T03:50:36.829Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a2a30cc7b01bbfe60c6187c"
+  },
+  "name": "Mojito",
+  "description": "Zesty lime and fresh mint burst forth in a cool, sparkling sensation.",
+  "price": 119,
+  "category": "beverages",
+  "image": "/images/mojito.jpg",
+  "isAvailable": true,
+  "createdBy": {
+    "$oid": "6a21218e0a35284e2affe4a4"
+  },
+  "createdAt": {
+    "$date": "2026-06-11T03:51:40.790Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a2a310f7b01bbfe60c6187d"
+  },
+  "name": "Chocolate milkshake",
+  "description": "Thick, frosty, irresistibly rich chocolate milkshake — pure bliss in every sip.",
+  "price": 140,
+  "category": "beverages",
+  "image": "/images/milkshake.jpg",
+  "isAvailable": true,
+  "createdBy": {
+    "$oid": "6a21218e0a35284e2affe4a4"
+  },
+  "createdAt": {
+    "$date": "2026-06-11T03:52:47.012Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a2a31397b01bbfe60c6187e"
+  },
+  "name": "Pizza + coke combo",
+  "description": "Warm, gooey pizza and a crisp, refreshing coke: your ultimate satisfaction combo.",
+  "price": 1099,
+  "category": "combo",
+  "image": "/images/combo1.jpg",
+  "isAvailable": true,
+  "createdBy": {
+    "$oid": "6a21218e0a35284e2affe4a4"
+  },
+  "createdAt": {
+    "$date": "2026-06-11T03:53:29.518Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a2a31697b01bbfe60c6187f"
+  },
+  "name": "Pizza + sides + coke combo",
+  "description": "Your ultimate hot, cheesy pizza feast with crispy sides and a refreshing drink.",
+  "price": 1299,
+  "category": "combo",
+  "image": "/images/combo2.jpg",
+  "isAvailable": true,
+  "createdBy": {
+    "$oid": "6a21218e0a35284e2affe4a4"
+  },
+  "createdAt": {
+    "$date": "2026-06-11T03:54:17.085Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a2a31967b01bbfe60c61880"
+  },
+  "name": "Truffle mushroom pizza",
+  "description": "Indulge in earthy truffles and rich wild mushrooms atop our crispy, cheesy masterpiece.",
+  "price": 799,
+  "category": "new_launches",
+  "image": "/images/truffle_pizza.jpg",
+  "isAvailable": true,
+  "createdBy": {
+    "$oid": "6a21218e0a35284e2affe4a4"
+  },
+  "createdAt": {
+    "$date": "2026-06-11T03:55:02.552Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a2a31fa7b01bbfe60c61881"
+  },
+  "name": "Peri peri pizza",
+  "description": "Fiery peri peri chicken, bursting with zesty flavor on a perfect, crispy crust.",
+  "price": 699,
+  "category": "new_launches",
+  "image": "/images/peri_peri.jpg",
+  "isAvailable": true,
+  "createdBy": {
+    "$oid": "6a21218e0a35284e2affe4a4"
+  },
+  "createdAt": {
+    "$date": "2026-06-11T03:56:42.535Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a2a327b7b01bbfe60c61882"
+  },
+  "name": "Classic cheese pizza",
+  "description": "Gooey melted mozzarella, zesty tomato sauce, and a perfectly crisp golden crust.",
+  "price": 349,
+  "category": "bestsellers",
+  "image": "/images/classic_cheese.jpg",
+  "isAvailable": true,
+  "createdBy": {
+    "$oid": "6a21218e0a35284e2affe4a4"
+  },
+  "createdAt": {
+    "$date": "2026-06-11T03:58:51.722Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a2a329f7b01bbfe60c61883"
+  },
+  "name": "Veggie supreme pizza",
+  "description": "Fresh, vibrant garden vegetables piled high on a bed of melted, bubbly mozzarella.",
+  "price": 459,
+  "category": "bestsellers",
+  "image": "/images/veggie_supreme.jpg",
+  "isAvailable": true,
+  "createdBy": {
+    "$oid": "6a21218e0a35284e2affe4a4"
+  },
+  "createdAt": {
+    "$date": "2026-06-11T03:59:27.708Z"
+  },
+  "__v": 0
+}]

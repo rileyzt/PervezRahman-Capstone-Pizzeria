@@ -1,5 +1,4 @@
-// LOGIN PAGE — using Bootstrap form and card classes
-
+// LOGIN PAGE 
 import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { loginUser } from '../services/api';

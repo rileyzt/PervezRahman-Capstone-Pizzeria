@@ -1,7 +1,4 @@
-// =====================================================
-// ROLE MIDDLEWARE — Checks if user is admin
-// =====================================================
-
+// ROLE MIDDLEWARE - Checks if user is admin
 const adminOnly = (req, res, next) => {
   // Simple check: is the user an admin?
   if (req.user && req.user.role === 'admin') {

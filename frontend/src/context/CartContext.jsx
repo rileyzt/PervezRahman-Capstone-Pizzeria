@@ -1,4 +1,4 @@
-// CART CONTEXT — manages cart items across the app
+// CART CONTEXT - manages cart items across the app
 
 import { createContext, useContext, useState, useEffect } from 'react';
 

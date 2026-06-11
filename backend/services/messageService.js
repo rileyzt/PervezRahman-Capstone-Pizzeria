@@ -1,4 +1,4 @@
-// MESSAGE SERVICE — generates status messages for order updates
+// MESSAGE SERVICE - generates status messages for order updates
 // PDF: "I should be able to receive message or pop up on the order status"
 
 // get a message based on order status

@@ -1,4 +1,4 @@
-// ADMIN DASHBOARD — with review sentiment analytics
+// ADMIN DASHBOARD - with review sentiment analytics
 
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
@@ -34,7 +34,6 @@ const AdminDashboard = () => {
     <div className="container py-5" style={{ maxWidth: '800px' }}>
       <h1 className="fw-bold text-white mb-4">Admin Dashboard</h1>
 
-      {/* Order Stats */}
       <div className="row g-3 mb-4">
         <div className="col-6 col-md-3">
           <div className="card border-dark-custom p-3 text-center">
@@ -62,7 +61,6 @@ const AdminDashboard = () => {
         </div>
       </div>
 
-      {/* AI Review Analytics */}
       {reviewData && (
         <div className="card border-dark-custom p-4 mb-4" style={{ borderLeft: '3px solid #7C3AED' }}>
           <h5 className="fw-semibold mb-3" style={{ color: '#7C3AED' }}>AI Sentiment Analytics</h5>
@@ -86,7 +84,6 @@ const AdminDashboard = () => {
             <span className="text-secondary ms-2">({reviewData.totalReviews} reviews)</span>
           </div>
 
-          {/* Recent reviews */}
           {reviewData.reviews && reviewData.reviews.length > 0 && (
             <div className="mt-3 border-top border-dark-custom pt-3">
               <small className="text-secondary mb-2 d-block">Recent Reviews:</small>
@@ -107,7 +104,6 @@ const AdminDashboard = () => {
         </div>
       )}
 
-      {/* Quick links */}
       <div className="row g-3">
         <div className="col-md-4">
           <Link to="/admin/menu" className="text-decoration-none">

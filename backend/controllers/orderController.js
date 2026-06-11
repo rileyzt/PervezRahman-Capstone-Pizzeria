@@ -1,13 +1,13 @@
-// ORDER CONTROLLER — uses service layer for business logic
+// ORDER CONTROLLER - uses service layer for business logic
 
 const Order = require('../models/Order');
 const { calculateBill, formatOrderResponse } = require('../services/orderService');
 const { getStatusMessage } = require('../services/messageService');
 const { sendOrderEmail } = require('../services/notificationService');
 
-// A simple automated timer that updates the order status every 3 seconds
+// A  automated timer that updates the order status every 3 seconds
 const startAutomatedProgression = (orderId) => {
-  // Step 1: Wait 3 seconds, then update to "accepted"
+  // Wait 3 seconds, then update to "accepted"
   setTimeout(async () => {
     try {
       const order = await Order.findById(orderId);
@@ -17,7 +17,7 @@ const startAutomatedProgression = (orderId) => {
         await order.save();
         console.log(`Order ${orderId} automatically updated to: accepted`);
 
-        // Step 2: Wait 3 more seconds, then update to "preparing"
+        // Wait 3 more seconds, then update to "preparing"
         setTimeout(async () => {
           try {
             const order2 = await Order.findById(orderId);
@@ -27,7 +27,7 @@ const startAutomatedProgression = (orderId) => {
               await order2.save();
               console.log(`Order ${orderId} automatically updated to: preparing`);
 
-              // Step 3: Wait 3 more seconds, then update to "out_for_delivery"
+              // Wait 3 more seconds, then update to "out_for_delivery"
               setTimeout(async () => {
                 try {
                   const order3 = await Order.findById(orderId);
@@ -37,7 +37,7 @@ const startAutomatedProgression = (orderId) => {
                     await order3.save();
                     console.log(`Order ${orderId} automatically updated to: out_for_delivery`);
 
-                    // Step 4: Wait 3 more seconds, then update to "delivered"
+                    // Wait 3 more seconds, then update to "delivered"
                     setTimeout(async () => {
                       try {
                         const order4 = await Order.findById(orderId);
@@ -68,7 +68,7 @@ const startAutomatedProgression = (orderId) => {
   }, 3000);
 };
 
-// POST /api/orders — customer places a new order
+// POST /api/orders - customer places a new order
 const placeOrder = async (req, res) => {
   try {
     const { items, deliveryMode, deliveryAddress } = req.body;
@@ -77,7 +77,6 @@ const placeOrder = async (req, res) => {
     if (!items || items.length === 0) {
       return res.status(400).json({ message: 'Cart is empty' });
     }
-
     // use service to calculate bill (subtotal, discount, GST, total)
     const bill = calculateBill(items);
 
@@ -96,12 +95,11 @@ const placeOrder = async (req, res) => {
       paymentStatus: 'pending'
     });
 
-    // Send order confirmation email (non-blocking)
+    // Sending order confirmation email 
     if (req.user && req.user.email) {
       sendOrderEmail(req.user.email, order);
     }
-
-    // Start the automatic order tracking progression
+    // Starting the automatic order tracking progression
     startAutomatedProgression(order._id);
 
     res.status(201).json(formatOrderResponse(order));
@@ -110,7 +108,7 @@ const placeOrder = async (req, res) => {
   }
 };
 
-// GET /api/orders/my — customer sees their own orders
+// GET /api/orders/my - customer seeing their own orders
 const getMyOrders = async (req, res) => {
   try {
     const orders = await Order.find({ user: req.user._id }).sort({ createdAt: -1 });
@@ -120,7 +118,7 @@ const getMyOrders = async (req, res) => {
   }
 };
 
-// GET /api/orders/:id — get single order details
+// GET /api/orders/:id - get single order details
 const getOrderById = async (req, res) => {
   try {
     const order = await Order.findById(req.params.id);
@@ -135,7 +133,7 @@ const getOrderById = async (req, res) => {
   }
 };
 
-// PUT /api/orders/:id/cancel — customer cancels order (only if pending)
+// PUT /api/orders/:id/cancel - customer cancels order if pending
 const cancelOrder = async (req, res) => {
   try {
     const order = await Order.findById(req.params.id);
@@ -158,7 +156,7 @@ const cancelOrder = async (req, res) => {
   }
 };
 
-// GET /api/orders — admin sees ALL orders
+// GET /api/orders - admin sees ALL orders
 const getAllOrders = async (req, res) => {
   try {
     const orders = await Order.find().populate('user', 'name email phone').sort({ createdAt: -1 });
@@ -168,22 +166,19 @@ const getAllOrders = async (req, res) => {
   }
 };
 
-// PUT /api/orders/:id/status — admin updates order status + auto message
+// PUT /api/orders/:id/status - admin updates order status + auto message
 const updateOrderStatus = async (req, res) => {
   try {
     const { status, statusMessage } = req.body;
     const order = await Order.findById(req.params.id);
-
     if (!order) {
       return res.status(404).json({ message: 'Order not found' });
     }
-
     if (status) {
       order.status = status;
       // auto-generate message using message service if none provided
       order.statusMessage = statusMessage || getStatusMessage(status);
     }
-
     await order.save();
     res.json({ message: 'Order updated', order: formatOrderResponse(order) });
   } catch (error) {

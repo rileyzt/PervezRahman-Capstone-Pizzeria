@@ -1,3 +1,5 @@
+//terminal outputs after running npm test
+
 PASS tests/app.test.js
   calculateBill - Positive Cases
     √ Should correctly calculate bill for valid items (6 ms)
@@ -27,3 +29,4 @@ Tests:       15 passed, 15 total
 Snapshots:   0 total
 Time:        2.611 s, estimated 4 s
 Ran all test suites.
+

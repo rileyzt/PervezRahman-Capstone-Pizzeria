@@ -1,12 +1,4 @@
-// =====================================================
-// MAIN.JSX — React Application Entry Point
-// =====================================================
-// This is the FIRST file that runs — it mounts our App component
-// into the HTML page at the element with id="root"
-//
-// StrictMode: Helps catch bugs during development by running
-// components twice to detect side effects
-// =====================================================
+// MAIN.JSX - React Application Entry Point
 
 import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';

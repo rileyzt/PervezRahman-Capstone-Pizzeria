@@ -1,27 +1,27 @@
-// ORDER SERVICE — business logic for orders
-// This is the "Service Layer" — keeps controllers thin
-// Controller handles HTTP (req, res) → Service handles LOGIC
+// ORDER SERVICE - business logic for orders
+// This is the "Service Layer" - keeps controllers 
+// Controller handles HTTP (req, res) - Service handles LOGIC
 
 // calculate bill with discount and GST
 const calculateBill = (items) => {
-  // Step 1: Calculate subtotal (sum of all items)
+  // Calculate subtotal (sum of all items)
   let subtotal = 0;
   for (let i = 0; i < items.length; i++) {
     subtotal = subtotal + (items[i].price * items[i].quantity);
   }
 
-  // Step 2: Apply 10% discount
+  //Apply 10% discount
   const discountPercent = 10;
   const discountAmount = Math.round(subtotal * discountPercent / 100);
 
-  // Step 3: Calculate amount after discount
+  // Calculate amount after discount
   const afterDiscount = subtotal - discountAmount;
 
-  // Step 4: Apply 5% GST on discounted amount
+  // Apply 5% GST on discounted amount
   const gstPercent = 5;
   const gstAmount = Math.round(afterDiscount * gstPercent / 100);
 
-  // Step 5: Final total
+  // Final total
   const totalAmount = afterDiscount + gstAmount;
 
   return {
@@ -35,7 +35,7 @@ const calculateBill = (items) => {
   };
 };
 
-// format order data for response (DTO — Data Transfer Object)
+// format order data for response 
 const formatOrderResponse = (order) => {
   return {
     _id: order._id,

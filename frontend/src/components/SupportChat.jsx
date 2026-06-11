@@ -1,4 +1,4 @@
-// SUPPORT CHATBOT COMPONENT — Floating AI support chat bubble
+// SUPPORT CHATBOT COMPONENT - Floating AI support chat bubble
 // Beginner-friendly React state and Axios API call to backend
 
 import { useState, useRef, useEffect } from 'react';
@@ -65,7 +65,7 @@ const SupportChat = () => {
 
   return (
     <div style={{ position: 'fixed', bottom: '20px', right: '20px', zIndex: 1000 }}>
-      {/* Floating Chat Bubble Button */}
+  
       {!isOpen && (
         <button
           onClick={() => setIsOpen(true)}
@@ -88,11 +88,11 @@ const SupportChat = () => {
           onMouseLeave={(e) => (e.currentTarget.style.transform = 'scale(1)')}
           title="AI Pizza Support"
         >
-          💬
+          💬 {/*emoji for design only */}
         </button>
       )}
 
-      {/* Chat Box Window */}
+  
       {isOpen && (
         <div
           style={{
@@ -107,7 +107,7 @@ const SupportChat = () => {
             overflow: 'hidden',
           }}
         >
-          {/* Header */}
+      
           <div
             style={{
               backgroundColor: '#E50914',
@@ -134,7 +134,7 @@ const SupportChat = () => {
             </button>
           </div>
 
-          {/* Messages Window */}
+      
           <div
             style={{
               flex: 1,
@@ -164,7 +164,7 @@ const SupportChat = () => {
               </div>
             ))}
 
-            {/* Typing Indicator */}
+   
             {loading && (
               <div
                 style={{
@@ -183,7 +183,7 @@ const SupportChat = () => {
             <div ref={messagesEndRef} />
           </div>
 
-          {/* Form Input */}
+        
           <form
             onSubmit={handleSend}
             style={{

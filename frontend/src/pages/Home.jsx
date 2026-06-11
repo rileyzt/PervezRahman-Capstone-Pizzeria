@@ -1,4 +1,4 @@
-// HOME PAGE — using Bootstrap grid and card classes
+// HOME PAGE - using Bootstrap grid and card classes
 
 import { Link } from 'react-router-dom';
 
@@ -14,7 +14,6 @@ const categories = [
 const Home = () => {
   return (
     <div>
-      {/* Hero Section */}
       <section className="bg-deeper d-flex flex-column align-items-center justify-content-center text-center py-5" style={{ minHeight: '520px' }}>
         <h1 className="fw-bold text-white hero-title" style={{ fontSize: '3.5rem', lineHeight: 1.1 }}>Delicious Pizza,</h1>
         <h1 className="fw-bold text-brand hero-title" style={{ fontSize: '3.5rem', lineHeight: 1.1 }}>Delivered Fast.</h1>
@@ -24,7 +23,6 @@ const Home = () => {
         <Link to="/menu" className="btn btn-danger px-5 py-3 fw-bold">Order Now</Link>
       </section>
 
-      {/* Categories */}
       <section className="container py-5">
         <h2 className="fw-bold text-white text-center mb-4">Explore the Menu</h2>
         <div className="row g-3">
@@ -41,7 +39,6 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Why Pizzeria */}
       <section className="container pb-5">
         <h2 className="fw-bold text-white text-center mb-4">Why Pizzeria?</h2>
         <div className="card p-4 border-dark-custom">

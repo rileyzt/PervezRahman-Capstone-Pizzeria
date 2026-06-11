@@ -10,7 +10,7 @@ const askGemini = async (prompt) => {
   const apiKey = process.env.GEMINI_API_KEY;
   const url = 'https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=' + apiKey;
 
-  // simple request body — just a text prompt
+  // simple request body - just a text prompt
   const body = {
     contents: [
       {
@@ -46,7 +46,7 @@ const analyzeSentiment = async (reviewText) => {
   try {
     const prompt = 'Analyze the sentiment of this customer review and reply with exactly one word: positive, neutral, or negative. Review: "' + reviewText + '"';
     const sentiment = await askGemini(prompt);
-    // clean the response — make lowercase, remove extra spaces
+    // clean the response - make lowercase, remove extra spaces
     return sentiment.toLowerCase().replace(/[^a-z]/g, '');
   } catch (error) {
     console.log('Gemini API depleted or failed, using local sentiment analysis fallback');
@@ -54,7 +54,7 @@ const analyzeSentiment = async (reviewText) => {
     const text = reviewText.toLowerCase();
     const positiveWords = ['good', 'great', 'delicious', 'love', 'best', 'nice', 'awesome', 'excellent', 'tasty', 'amazing', 'yummy'];
     const negativeWords = ['bad', 'slow', 'cold', 'worst', 'burnt', 'hate', 'terrible', 'disgusting', 'poor', 'expensive', 'late'];
-    
+
     let score = 0;
     positiveWords.forEach(word => {
       if (text.includes(word)) score++;

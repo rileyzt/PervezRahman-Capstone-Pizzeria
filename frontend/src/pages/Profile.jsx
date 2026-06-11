@@ -1,4 +1,4 @@
-// PROFILE PAGE — using Bootstrap card classes
+// PROFILE PAGE 
 
 import { useAuth } from '../context/AuthContext';
 
@@ -12,7 +12,6 @@ const Profile = () => {
       <h1 className="fw-bold text-white mb-4">My Profile</h1>
 
       <div className="card border-dark-custom p-4">
-        {/* Avatar */}
         <div className="bg-brand rounded-circle d-flex align-items-center justify-content-center mx-auto mb-4"
           style={{ width: '64px', height: '64px', fontSize: '1.5rem', fontWeight: 700 }}>
           {user.name ? user.name[0].toUpperCase() : 'U'}

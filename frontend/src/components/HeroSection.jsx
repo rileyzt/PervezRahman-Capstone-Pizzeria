@@ -1,4 +1,4 @@
-// HERO SECTION — used inside Home.jsx (not used separately anymore)
+// HERO SECTION - used inside Home.jsx (not used separately anymore)
 // This component exists but Home.jsx has its own hero section inline.
 // Keeping it here for reference if we want to extract later.
 

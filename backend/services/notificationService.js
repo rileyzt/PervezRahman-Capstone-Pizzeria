@@ -1,4 +1,4 @@
-// NOTIFICATION SERVICE — sends order confirmation email using Gmail SMTP
+// NOTIFICATION SERVICE - sends order confirmation email using Gmail SMTP
 // PDF: "Automated Email Notification Agent"
 
 const nodemailer = require('nodemailer');
@@ -10,12 +10,11 @@ const sendOrderEmail = async (userEmail, order) => {
       service: 'gmail',
       auth: {
         user: process.env.GMAIL_USER,
-        pass: process.env.GMAIL_PASS // 16-character Gmail App Password
+        pass: process.env.GMAIL_PASS // 16-character Gmail App Password generated from account settings
       }
     });
 
     const orderIdShort = order._id.toString().slice(-6).toUpperCase();
-
     // Format order items table rows
     const itemsHTML = order.items.map(item => `
       <tr>

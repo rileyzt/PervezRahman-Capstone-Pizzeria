@@ -1,4 +1,4 @@
-// APP.JSX — Main app with all routes
+// APP.JSX - Main app with all routes
 
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { Toaster } from 'react-hot-toast';
@@ -43,14 +43,12 @@ function App() {
 
           <main style={{ minHeight: 'calc(100vh - 140px)', paddingTop: '64px' }}>
             <Routes>
-              {/* Public */}
               <Route path="/" element={<Home />} />
               <Route path="/login" element={<Login />} />
               <Route path="/register" element={<Register />} />
               <Route path="/menu" element={<Menu />} />
               <Route path="/menu/:category" element={<Menu />} />
 
-              {/* Customer (need login) */}
               <Route path="/cart" element={<ProtectedRoute><Cart /></ProtectedRoute>} />
               <Route path="/checkout" element={<ProtectedRoute><Checkout /></ProtectedRoute>} />
               <Route path="/payment/:orderId" element={<ProtectedRoute><Payment /></ProtectedRoute>} />
@@ -58,7 +56,6 @@ function App() {
               <Route path="/order/:id" element={<ProtectedRoute><OrderStatus /></ProtectedRoute>} />
               <Route path="/profile" element={<ProtectedRoute><Profile /></ProtectedRoute>} />
 
-              {/* Admin (need login + admin role) */}
               <Route path="/admin" element={<AdminRoute><AdminDashboard /></AdminRoute>} />
               <Route path="/admin/menu" element={<AdminRoute><ManageMenu /></AdminRoute>} />
               <Route path="/admin/orders" element={<AdminRoute><ManageOrders /></AdminRoute>} />

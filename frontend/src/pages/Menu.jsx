@@ -1,4 +1,4 @@
-// MENU PAGE — using Bootstrap grid, tabs, and form classes
+// MENU PAGE 
 
 import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
@@ -78,7 +78,6 @@ const Menu = () => {
     <div className="container py-5">
       <h1 className="fw-bold text-white mb-4">Our Menu</h1>
 
-      {/* AI Smart Recommendation bar */}
       <div className="card mb-4" style={{ background: 'linear-gradient(135deg, #1a1a2e, #16213e)', border: '1px solid #E50914' }}>
         <div className="card-body">
           <h6 className="text-white fw-bold mb-2">AI Smart Recommendation</h6>
@@ -104,7 +103,6 @@ const Menu = () => {
             </button>
           </div>
 
-          {/* Recommended items */}
           {recommendedItems.length > 0 && (
             <div className="mt-3">
               <p className="text-secondary mb-2" style={{ fontSize: '0.85rem' }}>{recommendMsg}</p>
@@ -126,7 +124,6 @@ const Menu = () => {
         </div>
       </div>
 
-      {/* Search bar */}
       <div className="d-flex gap-2 mb-4">
         <input
           type="text"
@@ -139,7 +136,6 @@ const Menu = () => {
         <button className="btn btn-danger px-4 fw-semibold" onClick={handleSearch}>Search</button>
       </div>
 
-      {/* Category tabs */}
       <div className="d-flex flex-wrap gap-2 mb-4">
         {categories.map((cat) => (
           <button
@@ -153,7 +149,6 @@ const Menu = () => {
         ))}
       </div>
 
-      {/* Items grid */}
       {loading ? (
         <p className="text-center text-secondary py-5">Loading menu...</p>
       ) : items.length === 0 ? (

@@ -1,8 +1,8 @@
-// PAYMENT SERVICE — coupon validation logic
+// PAYMENT SERVICE - coupon validation logic
 
 // check if coupon code is valid
 const validateCoupon = (couponCode) => {
-  // the valid coupon is stored in .env as COUPON_CODE=WIPRO
+  // the valid coupon is stored in .env and also hardcoded here
   const validCoupon = process.env.COUPON_CODE || 'WIPRO';
 
   if (couponCode.toUpperCase() === validCoupon.toUpperCase()) {
@@ -12,7 +12,7 @@ const validateCoupon = (couponCode) => {
   }
 };
 
-// format payment response (DTO)
+// format payment response 
 const formatPaymentResponse = (order) => {
   return {
     orderId: order._id,

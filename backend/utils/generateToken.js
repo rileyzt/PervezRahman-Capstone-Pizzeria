@@ -1,6 +1,4 @@
-// =====================================================
-// GENERATE TOKEN UTILITY — Creates JWT Token
-// =====================================================
+// GENERATE TOKEN UTILITY - Creates JWT Token
 // PDF: "Implement session management using JSON Web Tokens (JWT)"
 //
 // THIS FILE DOES:
@@ -9,22 +7,16 @@
 // 3. Sets expiry time from .env (default: 24 hours)
 //
 // WHAT'S INSIDE THE TOKEN (payload):
-//   { id: "user_mongo_id", role: "customer" or "admin" }
-//   - id: so we know WHICH user this token belongs to
-//   - role: so middleware can check admin access without DB query
-//
-// WHY a separate utility file?
-//   - Used in both register and login → avoid repeating code
-//   - Alternative: Create token inline in controller
-//     → Works but violates DRY principle
-// =====================================================
+//  by example - { id: "user_mongo_id", role: "customer" or "admin" }
+//   - id - so we know WHICH user this token belongs to
+//   - role - so middleware can check admin access without DB query
 
 const jwt = require('jsonwebtoken');
 
 const generateToken = (id, role) => {
   return jwt.sign(
-    { id, role },                    // Payload — data stored in token
-    process.env.JWT_SECRET,          // Secret key — used to sign/verify
+    { id, role },                    // Payload - data stored in token
+    process.env.JWT_SECRET,          // Secret key - used to sign/verify
     { expiresIn: process.env.JWT_EXPIRE || '24h' }  // Expiry
   );
 };

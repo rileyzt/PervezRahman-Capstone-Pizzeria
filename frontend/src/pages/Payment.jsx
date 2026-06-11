@@ -1,4 +1,4 @@
-// PAYMENT PAGE — using Bootstrap card and form classes
+// PAYMENT PAGE 
 
 import { useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';

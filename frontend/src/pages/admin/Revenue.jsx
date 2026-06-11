@@ -1,4 +1,4 @@
-// ADMIN — REVENUE — using Bootstrap grid, card, and table classes
+// ADMIN - REVENUE 
 
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
@@ -21,7 +21,6 @@ const Revenue = () => {
     <div className="container py-5" style={{ maxWidth: '800px' }}>
       <h1 className="fw-bold text-white mb-4">Revenue Report</h1>
 
-      {/* Stats */}
       <div className="row g-3 mb-5">
         <div className="col-6 col-md-3">
           <div className="card border-dark-custom p-3 text-center">
@@ -49,7 +48,6 @@ const Revenue = () => {
         </div>
       </div>
 
-      {/* Orders list */}
       <h5 className="fw-semibold text-white mb-3">Delivered Orders</h5>
       {data.orders && data.orders.length > 0 ? (
         data.orders.map((order) => (

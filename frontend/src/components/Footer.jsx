@@ -1,4 +1,4 @@
-// FOOTER — using Bootstrap classes
+// FOOTER - using Bootstrap classes
 
 const Footer = () => {
   return (

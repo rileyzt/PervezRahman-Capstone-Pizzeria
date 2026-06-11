@@ -13,7 +13,7 @@ two types of users - admin and customer. both login with email+password.
 
 ## database thinking
 
-u three collections needed:
+u four collections needed:
 
 **users** - stores both admin and customer in same collection. role field tells them apart.
 - name, email, password (hashed obviously), role (customer/admin), phone, address
@@ -31,6 +31,13 @@ u three collections needed:
 - admin can also reject, customer can cancel (only if still pending)
 - payment info - we're doing dummy payment with coupon code
 - delivery mode - home delivery or store pickup
+
+**reviews** - customer reviews for menu items
+- review content
+- sentiment
+-rating
+
+
 
 the collections are connected:
 - orders point to users (who ordered)
@@ -134,11 +141,10 @@ s
 - google fonts - Inter for body, Outfit for headings
 
 
-## scrutiny
+// Github - https://github.com/rileyzt/PervezRahman-Capstone-Pizzeria
 
-- what if user registers with same email twice? check unique, show error
-- what if jwt expires?  redirect to login
-- what if admin tries to delete item thats in someones cart?  item has isAvailable flag
-- what if customer tries to cancel already accepted order? only cancel if status is pending
-- responsive design css media queries for mobile/tablet
-- form validation -check empty fields, email format, password length on frontend AND backend
+// Frontend (Globally available) - https://pizzeria-lake.vercel.app/
+
+//Backend - https://pizzeria-backend-usyv.onrender.com
+
+// MongoDb collection added in Pizzeria mongodb collections/ folder

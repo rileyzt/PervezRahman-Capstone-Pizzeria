@@ -1,4 +1,4 @@
-// MY ORDERS PAGE — using Bootstrap container and card classes
+// MY ORDERS PAGE 
 
 import { useState, useEffect } from 'react';
 import { getMyOrders, cancelOrder as cancelOrderAPI } from '../services/api';

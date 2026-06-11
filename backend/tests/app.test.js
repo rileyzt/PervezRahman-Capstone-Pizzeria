@@ -1,15 +1,12 @@
-// =====================================================
-// TEST FILE — Unit Tests + API Tests using Jest & Supertest
-// =====================================================
-// Tests cover:
-//   1. calculateBill() — billing logic (positive + negative)
-//   2. validateEmail() — email validation (positive + negative)
-//   3. validatePassword() — password validation (positive + negative)
-//   4. getStatusMessage() — order status messages (positive + negative)
-//   5. GET /api/menu — API endpoint test (positive)
-//   6. POST /api/auth/login — API login (positive + negative)
-//   7. POST /api/orders — API order placement (negative - empty cart)
-// =====================================================
+// TEST FILE - Unit Tests + API Tests using Jest & Supertest
+// Tests :
+//   1. calculateBill() - billing logic (positive + negative)
+//   2. validateEmail() - email validation (positive + negative)
+//   3. validatePassword() - password validation (positive + negative)
+//   4. getStatusMessage() - order status messages (positive + negative)
+//   5. GET /api/menu - API endpoint test (positive)
+//   6. POST /api/auth/login - API login (positive + negative)
+//   7. POST /api/orders - API order placement (negative - empty cart)
 
 const request = require('supertest');
 const app = require('../server');
@@ -17,9 +14,7 @@ const { calculateBill } = require('../services/orderService');
 const { validateEmail, validatePassword } = require('../utils/validators');
 const { getStatusMessage } = require('../services/messageService');
 
-// =====================================================
-// TEST 1: calculateBill — Positive Case
-// =====================================================
+// TEST 1: calculateBill - Positive Case
 describe('calculateBill - Positive Cases', () => {
   test('Should correctly calculate bill for valid items', () => {
     const items = [
@@ -56,9 +51,7 @@ describe('calculateBill - Positive Cases', () => {
   });
 });
 
-// =====================================================
-// TEST 2: calculateBill — Negative Cases
-// =====================================================
+// TEST 2: calculateBill - Negative Cases
 describe('calculateBill - Negative Cases', () => {
   test('Should return zero totals for empty cart', () => {
     const items = [];
@@ -88,9 +81,7 @@ describe('calculateBill - Negative Cases', () => {
   });
 });
 
-// =====================================================
-// TEST 3: validateEmail — Positive + Negative
-// =====================================================
+// TEST 3: validateEmail - Positive + Negative
 describe('validateEmail', () => {
   test('Positive: Should accept valid email format', () => {
     expect(validateEmail('user@gmail.com')).toBe(true);
@@ -105,9 +96,7 @@ describe('validateEmail', () => {
   });
 });
 
-// =====================================================
-// TEST 4: validatePassword — Positive + Negative
-// =====================================================
+// TEST 4: validatePassword - Positive + Negative
 describe('validatePassword', () => {
   test('Positive: Should accept password with 6 or more characters', () => {
     expect(validatePassword('password')).toBe(true);
@@ -126,9 +115,7 @@ describe('validatePassword', () => {
   });
 });
 
-// =====================================================
-// TEST 5: getStatusMessage — Positive + Negative
-// =====================================================
+// TEST 5: getStatusMessage - Positive + Negative
 describe('getStatusMessage', () => {
   test('Positive: Should return correct message for valid statuses', () => {
     expect(getStatusMessage('accepted')).toContain('accepted');
@@ -142,9 +129,7 @@ describe('getStatusMessage', () => {
   });
 });
 
-// =====================================================
-// TEST 6: GET /api/menu — API Endpoint (Positive)
-// =====================================================
+// TEST 6: GET /api/menu - API Endpoint (Positive)
 describe('GET /api/menu', () => {
   test('Positive: Should return 200 and an array of menu items', async () => {
     const res = await request(app).get('/api/menu');
@@ -154,9 +139,7 @@ describe('GET /api/menu', () => {
   });
 });
 
-// =====================================================
-// TEST 7: POST /api/auth/login — API Endpoint (Positive + Negative)
-// =====================================================
+// TEST 7: POST /api/auth/login - API Endpoint (Positive + Negative)
 describe('POST /api/auth/login', () => {
   test('Negative: Should return 401 for wrong password', async () => {
     const res = await request(app)

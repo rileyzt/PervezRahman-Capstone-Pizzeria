@@ -1,4 +1,4 @@
-// MENU ITEM CARD — using Bootstrap card classes
+// MENU ITEM CARD - using Bootstrap card classes
 
 import { useCart } from '../context/CartContext';
 
@@ -7,7 +7,7 @@ const MenuItemCard = ({ item }) => {
 
   return (
     <div className="card menu-card border-dark-custom overflow-hidden h-100">
-      {/* Image */}
+
       <div className="bg-deeper" style={{ height: '180px', overflow: 'hidden' }}>
         {item.image ? (
           <img src={item.image} alt={item.name} className="w-100 h-100" style={{ objectFit: 'cover' }} />
@@ -18,7 +18,6 @@ const MenuItemCard = ({ item }) => {
         )}
       </div>
 
-      {/* Info */}
       <div className="card-body p-3">
         <h6 className="fw-semibold text-white mb-1">{item.name}</h6>
         <p className="text-secondary mb-3" style={{ fontSize: '0.8rem', lineHeight: '1.4' }}>{item.description}</p>

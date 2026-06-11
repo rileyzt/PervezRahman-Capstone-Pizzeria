@@ -1,19 +1,16 @@
-// AI CONTROLLER — handles AI-powered features
+// AI CONTROLLER - handles AI-powered features
 
 const { askGemini, generateDescription, analyzeSentiment } = require('../services/aiService');
 const Review = require('../models/Review');
 const Order = require('../models/Order');
 const MenuItem = require('../models/MenuItem');
-
-// POST /api/ai/generate-description — admin generates a menu item description
+// POST /api/ai/generate-description  admin generates a menu item description
 const generateItemDescription = async (req, res) => {
   try {
     const { name, category } = req.body;
-
     if (!name) {
       return res.status(400).json({ message: 'Please provide item name' });
     }
-
     const description = await generateDescription(name, category || 'food');
     res.json({ description });
   } catch (error) {
@@ -21,17 +18,14 @@ const generateItemDescription = async (req, res) => {
     res.status(500).json({ message: 'AI generation failed. Check your API key.', error: error.message });
   }
 };
-
-// POST /api/ai/review — customer submits a review for a delivered order
+// POST /api/ai/review - customer submits a review for a delivered order
 const submitReview = async (req, res) => {
   try {
     const { orderId, reviewText, rating } = req.body;
-
     if (!orderId || !reviewText || !rating) {
       return res.status(400).json({ message: 'Please provide orderId, reviewText, and rating' });
     }
-
-    // check if order exists and is delivered
+    // check if order is there or not and is delivered
     const order = await Order.findById(orderId);
     if (!order) {
       return res.status(404).json({ message: 'Order not found' });
@@ -39,13 +33,10 @@ const submitReview = async (req, res) => {
     if (order.status !== 'delivered') {
       return res.status(400).json({ message: 'You can only review delivered orders' });
     }
-
-    // check if already reviewed
     const existingReview = await Review.findOne({ order: orderId });
     if (existingReview) {
       return res.status(400).json({ message: 'You have already reviewed this order' });
     }
-
     // use AI to analyze sentiment
     let sentiment = 'neutral';
     try {
@@ -75,7 +66,7 @@ const submitReview = async (req, res) => {
   }
 };
 
-// GET /api/ai/reviews — admin gets all reviews with sentiment stats
+// GET /api/ai/reviews - admin gets all reviews with sentiment stats
 const getReviewStats = async (req, res) => {
   try {
     const reviews = await Review.find()
@@ -93,7 +84,6 @@ const getReviewStats = async (req, res) => {
     }
 
     const avgRating = reviews.length > 0 ? (totalRating / reviews.length).toFixed(1) : 0;
-
     res.json({
       totalReviews: reviews.length,
       positive,
@@ -107,12 +97,10 @@ const getReviewStats = async (req, res) => {
   }
 };
 
-// GET /api/ai/recommendations — simple rule-based recommendations
+// GET /api/ai/recommendations - simple rule-based recommendations
 const getRecommendations = async (req, res) => {
   try {
     const { categories } = req.query;
-    // categories is a comma-separated string like "pizza,sides"
-
     const cartCategories = categories ? categories.split(',') : [];
     let recommendCategory = '';
 
@@ -129,7 +117,7 @@ const getRecommendations = async (req, res) => {
       recommendCategory = 'bestsellers';
     }
 
-    // get 3 items from the recommended category
+    // we recommend 3 items from the recommended category
     const items = await MenuItem.find({ category: recommendCategory, isAvailable: true }).limit(3);
 
     res.json({
@@ -142,7 +130,7 @@ const getRecommendations = async (req, res) => {
   }
 };
 
-// POST /api/ai/chat — customer chats with support AI agent
+// POST /api/ai/chat - customer chats with support AI agent
 const handleSupportChat = async (req, res) => {
   try {
     const { message } = req.body;
@@ -155,7 +143,6 @@ const handleSupportChat = async (req, res) => {
 
     let prompt = '';
     if (latestOrder) {
-      // format items string for context
       const itemsList = latestOrder.items.map(i => `${i.name} (x${i.quantity})`).join(', ');
       
       prompt = `You are "Pizzeria AI Support", a friendly customer support agent. 
@@ -185,7 +172,7 @@ Answer their question politely in a friendly, conversational way. Be extremely b
     } catch (aiError) {
       console.log('Gemini API depleted or failed, using local chatbot fallback');
       
-      // Local chatbot logic (beginner-friendly word-matching and state checks)
+      // Local chatbot logic 
       const text = message.toLowerCase();
       let reply = '';
 
@@ -237,7 +224,7 @@ Answer their question politely in a friendly, conversational way. Be extremely b
   }
 };
 
-// POST /api/ai/smart-recommend — AI recommends menu items based on customer's mood/preference
+// POST /api/ai/smart-recommend - AI recommends menu items based on customer's mood/preference
 const handleSmartRecommend = async (req, res) => {
   try {
     const { query } = req.body;
@@ -245,17 +232,16 @@ const handleSmartRecommend = async (req, res) => {
       return res.status(400).json({ message: 'Please describe what you are in the mood for' });
     }
 
-    // Fetch all available menu items from database
+    // Fetch all  available menu items from database
     const allItems = await MenuItem.find({ isAvailable: true });
     if (allItems.length === 0) {
       return res.json({ items: [], message: 'No menu items available right now' });
     }
 
-    // Build a short list of items for the AI prompt
     const itemList = allItems.map(item => `${item.name} (${item.category}, INR ${item.price})`).join(', ');
 
     try {
-      // Ask Gemini to pick the best matching item names
+      // Asking Gemini to pick the best matching item names
       const prompt = `You are a menu recommendation assistant for a pizza restaurant.
 Here are all available items: ${itemList}
 
@@ -265,7 +251,7 @@ Return ONLY the exact names of the top 3 most relevant items, separated by comma
 
       const aiResponse = await askGemini(prompt);
 
-      // Parse AI response — extract item names and match them to database items
+      // Parse AI response - extract item names and match them to database items
       const recommendedNames = aiResponse.split(',').map(n => n.trim().toLowerCase());
       const matched = allItems.filter(item =>
         recommendedNames.some(name => item.name.toLowerCase().includes(name) || name.includes(item.name.toLowerCase()))
@@ -278,7 +264,7 @@ Return ONLY the exact names of the top 3 most relevant items, separated by comma
       console.log('Gemini API failed for recommendation, using keyword fallback');
     }
 
-    // FALLBACK — simple keyword matching against item name, description, and category
+    // FALLBACK when AI fails - simple keyword matching against item name, description, and category
     const words = query.toLowerCase().split(' ');
     const scored = allItems.map(item => {
       let score = 0;

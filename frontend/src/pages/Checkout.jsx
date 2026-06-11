@@ -1,4 +1,4 @@
-// CHECKOUT PAGE — with smart recommendations and bill breakdown
+// CHECKOUT PAGE - with smart recommendations and bill breakdown
 
 import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
@@ -86,7 +86,6 @@ const Checkout = () => {
 
       {error && <div className="alert py-2 mb-3" style={{ background: 'rgba(229,9,20,0.1)', border: 'none', color: '#E50914', fontSize: '0.9rem' }}>{error}</div>}
 
-      {/* Smart Recommendations */}
       {recommendations.length > 0 && (
         <div className="card border-dark-custom p-4 mb-3" style={{ borderColor: '#7C3AED !important', borderLeft: '3px solid #7C3AED' }}>
           <h6 className="fw-semibold mb-3" style={{ color: '#7C3AED' }}>You might also like</h6>
@@ -104,7 +103,6 @@ const Checkout = () => {
         </div>
       )}
 
-      {/* Bill Summary */}
       <div className="card border-dark-custom p-4 mb-3">
         <h5 className="fw-semibold text-white mb-3">Bill Summary</h5>
         {cartItems.map((item) => (
@@ -133,7 +131,6 @@ const Checkout = () => {
         </div>
       </div>
 
-      {/* Delivery Mode */}
       <div className="card border-dark-custom p-4 mb-3">
         <h5 className="fw-semibold text-white mb-3">Delivery Mode</h5>
         <div className="d-flex gap-2">

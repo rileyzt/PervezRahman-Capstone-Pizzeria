@@ -1,0 +1,896 @@
+[{
+  "_id": {
+    "$oid": "6a22672e6149356480ba62a1"
+  },
+  "user": {
+    "$oid": "6a21218e0a35284e2affe4a4"
+  },
+  "items": [
+    {
+      "menuItem": {
+        "$oid": "6a2267126149356480ba62a0"
+      },
+      "name": "Korean Pizza",
+      "quantity": 1,
+      "price": 899
+    }
+  ],
+  "totalAmount": 899,
+  "status": "cancelled",
+  "statusMessage": "",
+  "paymentMethod": "coupon",
+  "couponCode": "WIPRO",
+  "paymentStatus": "completed",
+  "deliveryMode": "delivery",
+  "deliveryAddress": "dgfkfk",
+  "createdAt": {
+    "$date": "2026-06-05T06:05:34.359Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a22a6c7a709c2c80c81e819"
+  },
+  "user": {
+    "$oid": "6a225a7613c31335c9a20fd9"
+  },
+  "items": [
+    {
+      "menuItem": {
+        "$oid": "6a2268926149356480ba62a2"
+      },
+      "name": "pizz",
+      "quantity": 3,
+      "price": 677
+    }
+  ],
+  "subtotal": 2031,
+  "discountPercent": 10,
+  "discountAmount": 203,
+  "gstPercent": 5,
+  "gstAmount": 91,
+  "totalAmount": 1919,
+  "status": "delivered",
+  "statusMessage": "Order delivered! Enjoy your meal.",
+  "paymentMethod": "coupon",
+  "couponCode": "WIPRO",
+  "paymentStatus": "completed",
+  "deliveryMode": "delivery",
+  "deliveryAddress": "KBA Mens Hostel, Crescent Univ, Chennai, 600048",
+  "createdAt": {
+    "$date": "2026-06-05T10:36:55.108Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a24fcdb77cd18c35cc48f82"
+  },
+  "user": {
+    "$oid": "6a24fa8377cd18c35cc48f81"
+  },
+  "items": [
+    {
+      "menuItem": {
+        "$oid": "6a2268926149356480ba62a2"
+      },
+      "name": "pizz",
+      "quantity": 1,
+      "price": 677
+    }
+  ],
+  "subtotal": 677,
+  "discountPercent": 10,
+  "discountAmount": 68,
+  "gstPercent": 5,
+  "gstAmount": 30,
+  "totalAmount": 639,
+  "status": "accepted",
+  "statusMessage": "Order accepted! Preparing your food.",
+  "paymentMethod": "coupon",
+  "couponCode": "WIPRO",
+  "paymentStatus": "completed",
+  "deliveryMode": "delivery",
+  "deliveryAddress": "uyg",
+  "createdAt": {
+    "$date": "2026-06-07T05:08:43.519Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a2616c9981c5edb7fc0d072"
+  },
+  "user": {
+    "$oid": "6a225a7613c31335c9a20fd9"
+  },
+  "items": [
+    {
+      "menuItem": {
+        "$oid": "6a25165ebe46ea65a0babbdc"
+      },
+      "name": "Italian Margherita",
+      "quantity": 1,
+      "price": 899
+    }
+  ],
+  "subtotal": 899,
+  "discountPercent": 10,
+  "discountAmount": 90,
+  "gstPercent": 5,
+  "gstAmount": 40,
+  "totalAmount": 849,
+  "status": "accepted",
+  "statusMessage": "Order accepted! Preparing your food.",
+  "paymentMethod": "coupon",
+  "couponCode": "WIPRO",
+  "paymentStatus": "completed",
+  "deliveryMode": "pickup",
+  "deliveryAddress": "Store Pickup",
+  "createdAt": {
+    "$date": "2026-06-08T01:11:37.124Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a262ca453b5d01f12ad5466"
+  },
+  "user": {
+    "$oid": "6a225a7613c31335c9a20fd9"
+  },
+  "items": [
+    {
+      "menuItem": {
+        "$oid": "6a2617f5a621d5c61d4f2267"
+      },
+      "name": "Coca Cola",
+      "quantity": 1,
+      "price": 90
+    },
+    {
+      "menuItem": {
+        "$oid": "6a25165ebe46ea65a0babbdc"
+      },
+      "name": "Italian Margherita",
+      "quantity": 1,
+      "price": 899
+    }
+  ],
+  "subtotal": 989,
+  "discountPercent": 10,
+  "discountAmount": 99,
+  "gstPercent": 5,
+  "gstAmount": 45,
+  "totalAmount": 935,
+  "status": "preparing",
+  "statusMessage": "Your food is being prepared!",
+  "paymentMethod": "coupon",
+  "couponCode": "WIPRO",
+  "paymentStatus": "completed",
+  "deliveryMode": "delivery",
+  "deliveryAddress": "HSHS",
+  "createdAt": {
+    "$date": "2026-06-08T02:44:52.735Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a2636cd53b5d01f12ad5467"
+  },
+  "user": {
+    "$oid": "6a225a7613c31335c9a20fd9"
+  },
+  "items": [
+    {
+      "menuItem": {
+        "$oid": "6a2617f5a621d5c61d4f2269"
+      },
+      "name": "Stuffed Garlic Bread",
+      "quantity": 1,
+      "price": 199
+    }
+  ],
+  "subtotal": 199,
+  "discountPercent": 10,
+  "discountAmount": 20,
+  "gstPercent": 5,
+  "gstAmount": 9,
+  "totalAmount": 188,
+  "status": "rejected",
+  "statusMessage": "Sorry, we cannot process this order.",
+  "paymentMethod": "coupon",
+  "couponCode": "WIPRO",
+  "paymentStatus": "completed",
+  "deliveryMode": "delivery",
+  "deliveryAddress": "SV",
+  "createdAt": {
+    "$date": "2026-06-08T03:28:13.776Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a2642bcc1d0859c23fbd8c8"
+  },
+  "user": {
+    "$oid": "6a24fa8377cd18c35cc48f81"
+  },
+  "items": [
+    {
+      "menuItem": {
+        "$oid": "6a25165ebe46ea65a0babbdc"
+      },
+      "name": "Italian Margherita",
+      "quantity": 1,
+      "price": 899
+    },
+    {
+      "menuItem": {
+        "$oid": "6a2617f5a621d5c61d4f2268"
+      },
+      "name": "Garlic Breadsticks",
+      "quantity": 1,
+      "price": 150
+    }
+  ],
+  "subtotal": 1049,
+  "discountPercent": 10,
+  "discountAmount": 105,
+  "gstPercent": 5,
+  "gstAmount": 47,
+  "totalAmount": 991,
+  "status": "delivered",
+  "statusMessage": "Order delivered! Enjoy your delicious pizza!",
+  "paymentMethod": "coupon",
+  "couponCode": "WIPRO",
+  "paymentStatus": "completed",
+  "deliveryMode": "delivery",
+  "deliveryAddress": "123 Main St, Pizza Town",
+  "createdAt": {
+    "$date": "2026-06-08T04:19:08.639Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a264319c1d0859c23fbd8c9"
+  },
+  "user": {
+    "$oid": "6a24fa8377cd18c35cc48f81"
+  },
+  "items": [
+    {
+      "menuItem": {
+        "$oid": "6a25165ebe46ea65a0babbdc"
+      },
+      "name": "Italian Margherita",
+      "quantity": 1,
+      "price": 899
+    }
+  ],
+  "subtotal": 899,
+  "discountPercent": 10,
+  "discountAmount": 90,
+  "gstPercent": 5,
+  "gstAmount": 40,
+  "totalAmount": 849,
+  "status": "delivered",
+  "statusMessage": "Order delivered! Enjoy your delicious pizza!",
+  "paymentMethod": "coupon",
+  "couponCode": "WIPRO",
+  "paymentStatus": "completed",
+  "deliveryMode": "delivery",
+  "deliveryAddress": "456 Oak Rd, Pizzaville",
+  "createdAt": {
+    "$date": "2026-06-08T04:20:41.640Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a264378c1d0859c23fbd8ca"
+  },
+  "user": {
+    "$oid": "6a24fa8377cd18c35cc48f81"
+  },
+  "items": [
+    {
+      "menuItem": {
+        "$oid": "6a2617f5a621d5c61d4f2269"
+      },
+      "name": "Stuffed Garlic Bread",
+      "quantity": 1,
+      "price": 199
+    }
+  ],
+  "subtotal": 199,
+  "discountPercent": 10,
+  "discountAmount": 20,
+  "gstPercent": 5,
+  "gstAmount": 9,
+  "totalAmount": 188,
+  "status": "delivered",
+  "statusMessage": "Order delivered! Enjoy your delicious pizza!",
+  "paymentMethod": "coupon",
+  "couponCode": "",
+  "paymentStatus": "pending",
+  "deliveryMode": "delivery",
+  "deliveryAddress": "789 Pine Ave, Pizzaland",
+  "createdAt": {
+    "$date": "2026-06-08T04:22:16.486Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a2645b2c1d0859c23fbd8cb"
+  },
+  "user": {
+    "$oid": "6a24fa8377cd18c35cc48f81"
+  },
+  "items": [
+    {
+      "menuItem": {
+        "$oid": "6a25165ebe46ea65a0babbdc"
+      },
+      "name": "Italian Margherita",
+      "quantity": 1,
+      "price": 899
+    },
+    {
+      "menuItem": {
+        "$oid": "6a2617f5a621d5c61d4f2267"
+      },
+      "name": "Coca Cola",
+      "quantity": 1,
+      "price": 90
+    }
+  ],
+  "subtotal": 989,
+  "discountPercent": 10,
+  "discountAmount": 99,
+  "gstPercent": 5,
+  "gstAmount": 45,
+  "totalAmount": 935,
+  "status": "delivered",
+  "statusMessage": "Order delivered! Enjoy your delicious pizza!",
+  "paymentMethod": "coupon",
+  "couponCode": "WIPRO",
+  "paymentStatus": "completed",
+  "deliveryMode": "delivery",
+  "deliveryAddress": "HDTHFJ",
+  "createdAt": {
+    "$date": "2026-06-08T04:31:46.995Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a2776c93c598bd8455b90f4"
+  },
+  "user": {
+    "$oid": "6a225a7613c31335c9a20fd9"
+  },
+  "items": [
+    {
+      "menuItem": {
+        "$oid": "6a2617f5a621d5c61d4f2268"
+      },
+      "name": "Garlic Breadsticks",
+      "quantity": 1,
+      "price": 150
+    },
+    {
+      "menuItem": {
+        "$oid": "6a25165ebe46ea65a0babbdc"
+      },
+      "name": "Italian Margherita",
+      "quantity": 1,
+      "price": 899
+    },
+    {
+      "menuItem": {
+        "$oid": "6a2617f5a621d5c61d4f2267"
+      },
+      "name": "Coca Cola",
+      "quantity": 1,
+      "price": 90
+    }
+  ],
+  "subtotal": 1139,
+  "discountPercent": 10,
+  "discountAmount": 114,
+  "gstPercent": 5,
+  "gstAmount": 51,
+  "totalAmount": 1076,
+  "status": "delivered",
+  "statusMessage": "Order delivered! Enjoy your delicious pizza!",
+  "paymentMethod": "coupon",
+  "couponCode": "WIPRO",
+  "paymentStatus": "completed",
+  "deliveryMode": "delivery",
+  "deliveryAddress": "vf",
+  "createdAt": {
+    "$date": "2026-06-09T02:13:29.771Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a28ec97294eb3a4a1018711"
+  },
+  "user": {
+    "$oid": "6a21218e0a35284e2affe4a4"
+  },
+  "items": [
+    {
+      "menuItem": {
+        "$oid": "6a2617f5a621d5c61d4f2267"
+      },
+      "name": "Coca Cola",
+      "quantity": 1,
+      "price": 90
+    },
+    {
+      "menuItem": {
+        "$oid": "6a25165ebe46ea65a0babbdc"
+      },
+      "name": "Italian Margherita",
+      "quantity": 1,
+      "price": 899
+    }
+  ],
+  "subtotal": 989,
+  "discountPercent": 10,
+  "discountAmount": 99,
+  "gstPercent": 5,
+  "gstAmount": 45,
+  "totalAmount": 935,
+  "status": "delivered",
+  "statusMessage": "Order delivered! Enjoy your delicious pizza!",
+  "paymentMethod": "coupon",
+  "couponCode": "WIPRO",
+  "paymentStatus": "completed",
+  "deliveryMode": "delivery",
+  "deliveryAddress": "713146",
+  "createdAt": {
+    "$date": "2026-06-10T04:48:23.227Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a28fc53294eb3a4a1018712"
+  },
+  "user": {
+    "$oid": "6a21218e0a35284e2affe4a4"
+  },
+  "items": [
+    {
+      "menuItem": {
+        "$oid": "6a25165ebe46ea65a0babbdc"
+      },
+      "name": "Italian Margherita",
+      "quantity": 1,
+      "price": 899
+    },
+    {
+      "menuItem": {
+        "$oid": "6a2617f5a621d5c61d4f2267"
+      },
+      "name": "Coca Cola",
+      "quantity": 1,
+      "price": 90
+    }
+  ],
+  "subtotal": 989,
+  "discountPercent": 10,
+  "discountAmount": 99,
+  "gstPercent": 5,
+  "gstAmount": 45,
+  "totalAmount": 935,
+  "status": "delivered",
+  "statusMessage": "Order delivered! Enjoy your delicious pizza!",
+  "paymentMethod": "coupon",
+  "couponCode": "WIPRO",
+  "paymentStatus": "completed",
+  "deliveryMode": "delivery",
+  "deliveryAddress": "713416",
+  "createdAt": {
+    "$date": "2026-06-10T05:55:31.409Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a2936d45644e2fcc70f8f0a"
+  },
+  "user": {
+    "$oid": "6a21218e0a35284e2affe4a4"
+  },
+  "items": [
+    {
+      "menuItem": {
+        "$oid": "6a25165ebe46ea65a0babbdc"
+      },
+      "name": "Italian Margherita",
+      "quantity": 1,
+      "price": 899
+    }
+  ],
+  "subtotal": 899,
+  "discountPercent": 10,
+  "discountAmount": 90,
+  "gstPercent": 5,
+  "gstAmount": 40,
+  "totalAmount": 849,
+  "status": "delivered",
+  "statusMessage": "Order delivered! Enjoy your delicious pizza!",
+  "paymentMethod": "coupon",
+  "couponCode": "WIPRO",
+  "paymentStatus": "completed",
+  "deliveryMode": "delivery",
+  "deliveryAddress": "123 Pizza Street",
+  "createdAt": {
+    "$date": "2026-06-10T10:05:08.569Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a29378d5644e2fcc70f8f0b"
+  },
+  "user": {
+    "$oid": "6a21218e0a35284e2affe4a4"
+  },
+  "items": [
+    {
+      "menuItem": {
+        "$oid": "6a25165ebe46ea65a0babbdc"
+      },
+      "name": "Italian Margherita",
+      "quantity": 1,
+      "price": 899
+    }
+  ],
+  "subtotal": 899,
+  "discountPercent": 10,
+  "discountAmount": 90,
+  "gstPercent": 5,
+  "gstAmount": 40,
+  "totalAmount": 849,
+  "status": "delivered",
+  "statusMessage": "Order delivered! Enjoy your delicious pizza!",
+  "paymentMethod": "coupon",
+  "couponCode": "WIPRO",
+  "paymentStatus": "completed",
+  "deliveryMode": "delivery",
+  "deliveryAddress": "123 Pizza Street",
+  "createdAt": {
+    "$date": "2026-06-10T10:08:13.106Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a293da3f5317e7b5eb68609"
+  },
+  "user": {
+    "$oid": "6a293d8af5317e7b5eb68608"
+  },
+  "items": [
+    {
+      "menuItem": {
+        "$oid": "6a25165ebe46ea65a0babbdc"
+      },
+      "name": "Italian Margherita",
+      "quantity": 1,
+      "price": 899
+    },
+    {
+      "menuItem": {
+        "$oid": "6a2617f5a621d5c61d4f2267"
+      },
+      "name": "Coca Cola",
+      "quantity": 1,
+      "price": 90
+    }
+  ],
+  "subtotal": 989,
+  "discountPercent": 10,
+  "discountAmount": 99,
+  "gstPercent": 5,
+  "gstAmount": 45,
+  "totalAmount": 935,
+  "status": "delivered",
+  "statusMessage": "Order delivered! Enjoy your delicious pizza!",
+  "paymentMethod": "coupon",
+  "couponCode": "WIPRO",
+  "paymentStatus": "completed",
+  "deliveryMode": "delivery",
+  "deliveryAddress": "acas",
+  "createdAt": {
+    "$date": "2026-06-10T10:34:11.349Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a294315c4ef2bc47bad1374"
+  },
+  "user": {
+    "$oid": "6a293d8af5317e7b5eb68608"
+  },
+  "items": [
+    {
+      "menuItem": {
+        "$oid": "6a25165ebe46ea65a0babbdc"
+      },
+      "name": "Italian Margherita",
+      "quantity": 1,
+      "price": 899
+    }
+  ],
+  "subtotal": 899,
+  "discountPercent": 10,
+  "discountAmount": 90,
+  "gstPercent": 5,
+  "gstAmount": 40,
+  "totalAmount": 849,
+  "status": "delivered",
+  "statusMessage": "Order delivered! Enjoy your delicious pizza!",
+  "paymentMethod": "coupon",
+  "couponCode": "WIPRO",
+  "paymentStatus": "completed",
+  "deliveryMode": "delivery",
+  "deliveryAddress": "wdc",
+  "createdAt": {
+    "$date": "2026-06-10T10:57:25.582Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a2944c1c4ef2bc47bad1375"
+  },
+  "user": {
+    "$oid": "6a21218e0a35284e2affe4a4"
+  },
+  "items": [
+    {
+      "menuItem": {
+        "$oid": "6a25165ebe46ea65a0babbdc"
+      },
+      "name": "Italian Margherita",
+      "quantity": 1,
+      "price": 899
+    }
+  ],
+  "subtotal": 899,
+  "discountPercent": 10,
+  "discountAmount": 90,
+  "gstPercent": 5,
+  "gstAmount": 40,
+  "totalAmount": 849,
+  "status": "delivered",
+  "statusMessage": "Order delivered! Enjoy your delicious pizza!",
+  "paymentMethod": "coupon",
+  "couponCode": "WIPRO",
+  "paymentStatus": "completed",
+  "deliveryMode": "delivery",
+  "deliveryAddress": "123 Main St",
+  "createdAt": {
+    "$date": "2026-06-10T11:04:33.438Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a2995bbce02cf9fb44b93fc"
+  },
+  "user": {
+    "$oid": "6a21218e0a35284e2affe4a4"
+  },
+  "items": [
+    {
+      "menuItem": {
+        "$oid": "6a25165ebe46ea65a0babbdc"
+      },
+      "name": "Italian Margherita",
+      "quantity": 1,
+      "price": 899
+    }
+  ],
+  "subtotal": 899,
+  "discountPercent": 10,
+  "discountAmount": 90,
+  "gstPercent": 5,
+  "gstAmount": 40,
+  "totalAmount": 849,
+  "status": "delivered",
+  "statusMessage": "Order delivered! Enjoy your delicious pizza!",
+  "paymentMethod": "coupon",
+  "couponCode": "WIPRO",
+  "paymentStatus": "completed",
+  "deliveryMode": "delivery",
+  "deliveryAddress": "123 Main St, Springfield",
+  "createdAt": {
+    "$date": "2026-06-10T16:50:03.226Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a2a0cb899a0d00a359550f9"
+  },
+  "user": {
+    "$oid": "6a225a7613c31335c9a20fd9"
+  },
+  "items": [
+    {
+      "menuItem": {
+        "$oid": "6a25165ebe46ea65a0babbdc"
+      },
+      "name": "Italian Margherita",
+      "quantity": 1,
+      "price": 899
+    },
+    {
+      "menuItem": {
+        "$oid": "6a2617f5a621d5c61d4f2267"
+      },
+      "name": "Coca Cola",
+      "quantity": 1,
+      "price": 90
+    }
+  ],
+  "subtotal": 989,
+  "discountPercent": 10,
+  "discountAmount": 99,
+  "gstPercent": 5,
+  "gstAmount": 45,
+  "totalAmount": 935,
+  "status": "delivered",
+  "statusMessage": "Order delivered! Enjoy your delicious pizza!",
+  "paymentMethod": "coupon",
+  "couponCode": "WIPRO",
+  "paymentStatus": "completed",
+  "deliveryMode": "delivery",
+  "deliveryAddress": "713146",
+  "createdAt": {
+    "$date": "2026-06-11T01:17:44.800Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a2a0d6499a0d00a359550fa"
+  },
+  "user": {
+    "$oid": "6a293d8af5317e7b5eb68608"
+  },
+  "items": [
+    {
+      "menuItem": {
+        "$oid": "6a25165ebe46ea65a0babbdc"
+      },
+      "name": "Italian Margherita",
+      "quantity": 2,
+      "price": 899
+    },
+    {
+      "menuItem": {
+        "$oid": "6a2617f5a621d5c61d4f2267"
+      },
+      "name": "Coca Cola",
+      "quantity": 1,
+      "price": 90
+    }
+  ],
+  "subtotal": 1888,
+  "discountPercent": 10,
+  "discountAmount": 189,
+  "gstPercent": 5,
+  "gstAmount": 85,
+  "totalAmount": 1784,
+  "status": "delivered",
+  "statusMessage": "Order delivered! Enjoy your delicious pizza!",
+  "paymentMethod": "coupon",
+  "couponCode": "WIPRO",
+  "paymentStatus": "completed",
+  "deliveryMode": "delivery",
+  "deliveryAddress": "vrrdd",
+  "createdAt": {
+    "$date": "2026-06-11T01:20:36.190Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a2aa3a10302d0d20a60e3fa"
+  },
+  "user": {
+    "$oid": "6a21218e0a35284e2affe4a4"
+  },
+  "items": [
+    {
+      "menuItem": {
+        "$oid": "6a2a2f9d7b01bbfe60c61876"
+      },
+      "name": "Pepperoni pizza",
+      "quantity": 1,
+      "price": 999
+    },
+    {
+      "menuItem": {
+        "$oid": "6a2a30cc7b01bbfe60c6187c"
+      },
+      "name": "Mojito",
+      "quantity": 1,
+      "price": 119
+    },
+    {
+      "menuItem": {
+        "$oid": "6a2a308c7b01bbfe60c6187b"
+      },
+      "name": "Chicken wings",
+      "quantity": 1,
+      "price": 499
+    }
+  ],
+  "subtotal": 1617,
+  "discountPercent": 10,
+  "discountAmount": 162,
+  "gstPercent": 5,
+  "gstAmount": 73,
+  "totalAmount": 1528,
+  "status": "delivered",
+  "statusMessage": "Order delivered! Enjoy your delicious pizza!",
+  "paymentMethod": "coupon",
+  "couponCode": "WIPRO",
+  "paymentStatus": "completed",
+  "deliveryMode": "delivery",
+  "deliveryAddress": "713146",
+  "createdAt": {
+    "$date": "2026-06-11T12:01:37.728Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a2ab7033abb6f47121c70d1"
+  },
+  "user": {
+    "$oid": "6a21218e0a35284e2affe4a4"
+  },
+  "items": [
+    {
+      "menuItem": {
+        "$oid": "6a2a310f7b01bbfe60c6187d"
+      },
+      "name": "Chocolate milkshake",
+      "quantity": 1,
+      "price": 140
+    }
+  ],
+  "subtotal": 140,
+  "discountPercent": 10,
+  "discountAmount": 14,
+  "gstPercent": 5,
+  "gstAmount": 6,
+  "totalAmount": 132,
+  "status": "delivered",
+  "statusMessage": "Order delivered! Enjoy your delicious pizza!",
+  "paymentMethod": "coupon",
+  "couponCode": "WIPRO",
+  "paymentStatus": "completed",
+  "deliveryMode": "delivery",
+  "deliveryAddress": "713146",
+  "createdAt": {
+    "$date": "2026-06-11T13:24:19.279Z"
+  },
+  "__v": 0
+}]

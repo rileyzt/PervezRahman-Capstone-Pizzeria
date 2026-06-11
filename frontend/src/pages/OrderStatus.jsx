@@ -1,5 +1,4 @@
-// ORDER STATUS PAGE — with review form for delivered orders
-
+// ORDER STATUS PAGE 
 import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { getOrder, submitReview } from '../services/api';
@@ -66,7 +65,6 @@ const OrderStatus = () => {
       <div className="card border-dark-custom p-4">
         <p className="text-secondary mb-4" style={{ fontSize: '0.9rem' }}>Order #{order._id.slice(-6).toUpperCase()}</p>
 
-        {/* Status tracker */}
         {isCancelled ? (
           <div className="text-center py-4">
             <h4 className="text-brand fw-bold">{order.status === 'cancelled' ? 'Order Cancelled' : 'Order Rejected'}</h4>
@@ -84,7 +82,6 @@ const OrderStatus = () => {
           </div>
         )}
 
-        {/* Status message */}
         {order.statusMessage && (
           <div className="bg-card-hover rounded p-3 mb-4">
             <small className="text-secondary">Message from restaurant:</small>
@@ -92,7 +89,6 @@ const OrderStatus = () => {
           </div>
         )}
 
-        {/* Bill breakdown */}
         <div className="border-top border-dark-custom pt-3">
           <h6 className="fw-semibold text-white mb-3">Bill Details</h6>
           {order.items.map((item, i) => (
@@ -134,7 +130,6 @@ const OrderStatus = () => {
         </div>
       </div>
 
-      {/* Review Form — only shown for delivered orders */}
       {order.status === 'delivered' && (
         <div className="card border-dark-custom p-4 mt-3" style={{ borderLeft: '3px solid #7C3AED' }}>
           <h6 className="fw-semibold mb-3" style={{ color: '#7C3AED' }}>Rate Your Experience</h6>
@@ -146,7 +141,6 @@ const OrderStatus = () => {
             </div>
           ) : (
             <>
-              {/* Star rating */}
               <div className="mb-3">
                 <label className="form-label text-secondary" style={{ fontSize: '0.85rem' }}>Rating</label>
                 <div className="d-flex gap-2">
@@ -158,7 +152,6 @@ const OrderStatus = () => {
                 </div>
               </div>
 
-              {/* Review text */}
               <textarea className="form-control mb-3" placeholder="How was your experience? Tell us..." value={reviewText} onChange={(e) => setReviewText(e.target.value)} rows={3} />
 
               <button className="btn w-100 fw-semibold" style={{ background: '#7C3AED', color: '#fff' }} onClick={handleReviewSubmit}>

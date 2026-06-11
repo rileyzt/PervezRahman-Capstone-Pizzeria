@@ -1,0 +1,60 @@
+[{
+  "_id": {
+    "$oid": "6a21218e0a35284e2affe4a4"
+  },
+  "name": "Pervez Rahman",
+  "email": "rileyzt.0ai@gmail.com",
+  "password": "$2b$10$Mrjkqxi3zvjropM7L1po9uDJiM1QgXQw4.rXml5zJ7zbLwJNshnPa",
+  "role": "admin",
+  "phone": "8967079773",
+  "address": "",
+  "createdAt": {
+    "$date": "2026-06-04T06:56:14.233Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a225a7613c31335c9a20fd9"
+  },
+  "name": "PR",
+  "email": "riley.0aiserve@gmail.com",
+  "password": "$2b$10$rSC9WQCqY/E2iHMB1rZ/M.Npoa2DXHPcmIg3zP1WNWf64k0BpnOUm",
+  "role": "customer",
+  "phone": "8967079773",
+  "address": "",
+  "createdAt": {
+    "$date": "2026-06-05T05:11:18.109Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a24d94ad331a5be9fd3f494"
+  },
+  "name": "kjsegj",
+  "email": "john.doe@example.com",
+  "password": "$2b$10$mczDFyyg9m2Wn9BQ1Wm4Xefm87cEczizO6VEY8P362BCGpsHztcd2",
+  "role": "customer",
+  "phone": "",
+  "address": "",
+  "createdAt": {
+    "$date": "2026-06-07T02:36:58.914Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a293d8af5317e7b5eb68608"
+  },
+  "name": "PR",
+  "email": "pervezonboard@gmail.com",
+  "password": "$2b$10$j.ijmcnuHruSLypl7.xnC.SmQtMaQNmr14fsvTZUUHiPsAHGIA4tu",
+  "role": "customer",
+  "phone": "",
+  "address": "",
+  "createdAt": {
+    "$date": "2026-06-10T10:33:46.608Z"
+  },
+  "__v": 0
+}]

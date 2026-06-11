@@ -1,4 +1,4 @@
-// REGISTER PAGE — using Bootstrap form and card classes
+// REGISTER PAGE 
 
 import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';

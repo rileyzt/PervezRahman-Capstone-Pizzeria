@@ -1,9 +1,8 @@
-// PAYMENT CONTROLLER — uses payment service for coupon validation
+// PAYMENT CONTROLLER - uses payment service for coupon validation
 
 const Order = require('../models/Order');
 const { validateCoupon, formatPaymentResponse } = require('../services/paymentService');
-
-// POST /api/payment/process — validate coupon and mark payment
+// POST /api/payment/process - validate coupon and mark payment
 const processPayment = async (req, res) => {
   try {
     const { orderId, couponCode } = req.body;
@@ -11,24 +10,19 @@ const processPayment = async (req, res) => {
     if (!orderId || !couponCode) {
       return res.status(400).json({ message: 'Please provide order ID and coupon code' });
     }
-
     // find the order
     const order = await Order.findById(orderId);
-
     if (!order) {
       return res.status(404).json({ message: 'Order not found' });
     }
-
     // already paid?
     if (order.paymentStatus === 'completed') {
       return res.status(400).json({ message: 'Payment already completed' });
     }
-
     // use payment service to validate coupon
     const result = validateCoupon(couponCode);
-
     if (result.valid) {
-      // coupon is valid — mark payment as completed
+      // coupon is valid - mark payment as completed
       order.paymentStatus = 'completed';
       order.couponCode = couponCode.toUpperCase();
       order.paymentMethod = 'coupon';

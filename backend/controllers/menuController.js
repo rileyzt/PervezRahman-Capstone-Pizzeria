@@ -1,8 +1,8 @@
-// MENU CONTROLLER — CRUD + Search + Browse
+// MENU CONTROLLER - CRUD + Search + Browse
 
 const MenuItem = require('../models/MenuItem');
 
-// GET /api/menu — get all items (optional category filter)
+// GET /api/menu - get all items (optional category filter)
 const getAllMenuItems = async (req, res) => {
   try {
     let filter = { isAvailable: true };
@@ -11,7 +11,6 @@ const getAllMenuItems = async (req, res) => {
     if (req.query.category) {
       filter.category = req.query.category;
     }
-
     const items = await MenuItem.find(filter).sort({ createdAt: -1 });
     res.json(items);
   } catch (error) {
@@ -19,7 +18,7 @@ const getAllMenuItems = async (req, res) => {
   }
 };
 
-// GET /api/menu/search?q=margh — search by name
+// GET /api/menu/search?q=margh  - search by name
 const searchMenuItems = async (req, res) => {
   try {
     const query = req.query.q;
@@ -40,7 +39,7 @@ const searchMenuItems = async (req, res) => {
   }
 };
 
-// GET /api/menu/:id — get single item
+// GET /api/menu/:id - get single item
 const getMenuItemById = async (req, res) => {
   try {
     const item = await MenuItem.findById(req.params.id);
@@ -55,16 +54,14 @@ const getMenuItemById = async (req, res) => {
   }
 };
 
-// POST /api/menu — admin creates new item
+// POST /api/menu  admin creates new item
 const createMenuItem = async (req, res) => {
   try {
     const { name, description, price, category, image } = req.body;
-
     // simple validation
     if (!name || !description || !price || !category) {
       return res.status(400).json({ message: 'Please fill all required fields' });
     }
-
     const item = await MenuItem.create({
       name,
       description,
@@ -73,14 +70,13 @@ const createMenuItem = async (req, res) => {
       image: image || '',
       createdBy: req.user._id
     });
-
     res.status(201).json(item);
   } catch (error) {
     res.status(500).json({ message: 'Something went wrong', error: error.message });
   }
 };
 
-// PUT /api/menu/:id — admin updates item
+// PUT /api/menu/:id - admin updates item
 const updateMenuItem = async (req, res) => {
   try {
     const item = await MenuItem.findById(req.params.id);
@@ -107,7 +103,7 @@ const updateMenuItem = async (req, res) => {
   }
 };
 
-// DELETE /api/menu/:id — admin deletes item
+// DELETE /api/menu/:id - admin deletes item
 const deleteMenuItem = async (req, res) => {
   try {
     const item = await MenuItem.findById(req.params.id);

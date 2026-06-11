@@ -1,4 +1,4 @@
-// ADMIN — MANAGE MENU — with AI Description Generator button
+// ADMIN - MANAGE MENU - with AI Description Generator button
 
 import { useState, useEffect } from 'react';
 import { getMenuItems, createMenuItem, updateMenuItem, deleteMenuItem, aiGenerateDescription } from '../../services/api';
@@ -67,8 +67,6 @@ const ManageMenu = () => {
           {showForm ? 'Cancel' : '+ Add Item'}
         </button>
       </div>
-
-      {/* Add/Edit Form */}
       {showForm && (
         <div className="card border-dark-custom p-4 mb-4">
           <h5 className="fw-semibold text-white mb-3">{editingId ? 'Edit Item' : 'Add New Item'}</h5>
@@ -76,8 +74,6 @@ const ManageMenu = () => {
 
           <form onSubmit={handleSubmit}>
             <input className="form-control mb-2" placeholder="Item name" value={name} onChange={(e) => setName(e.target.value)} />
-
-            {/* Description + AI Generate button */}
             <div className="d-flex gap-2 mb-2">
               <input className="form-control" placeholder="Description" value={description} onChange={(e) => setDescription(e.target.value)} />
               <button type="button" className="btn btn-sm fw-semibold text-nowrap" style={{ background: '#7C3AED', color: '#fff', minWidth: '120px' }} onClick={handleAIGenerate} disabled={aiLoading}>
@@ -99,8 +95,6 @@ const ManageMenu = () => {
           </form>
         </div>
       )}
-
-      {/* Items list */}
       {loading ? (
         <p className="text-center text-secondary py-5">Loading...</p>
       ) : items.length === 0 ? (
@@ -116,7 +110,7 @@ const ManageMenu = () => {
               </div>
               <span className="text-brand fw-bold">₹{item.price}</span>
               <button className="btn btn-dark btn-sm border-secondary" onClick={() => handleEdit(item)}>Edit</button>
-              <button className="btn btn-sm" style={{ background: 'rgba(229,9,20,0.15)', color: '#E50914', border: '1px solid rgba(229,9,20,0.3)' }} onClick={() => handleDelete(item._id)}>Delete</button>
+               <button className="btn btn-sm" style={{ background: 'rgba(229,9,20,0.15)', color: '#E50914', border: '1px solid rgba(229,9,20,0.3)' }} onClick={() => handleDelete(item._id)}>Delete</button>
             </div>
           </div>
         ))
