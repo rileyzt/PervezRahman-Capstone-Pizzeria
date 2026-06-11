@@ -1,13 +1,8 @@
-/* =====================================================
-   PIZZERIA — Custom Theme (overrides Bootstrap defaults)
-   Netflix-style deep black + bright red
-   Bootstrap is imported in main.jsx BEFORE this file
-   so our styles here override Bootstrap defaults
-   =====================================================*/
+
 
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap');
 
-/* Override Bootstrap CSS variables with our theme */
+
 :root,
 [data-bs-theme="dark"] {
   --bs-body-bg: #0A0A0A;
@@ -168,16 +163,151 @@ h1, h2, h3, h4, h5, h6 {
 .status-dot-active { background: #E50914; }
 .status-dot-inactive { background: #333; }
 
-/* Responsive */
-@media (max-width: 768px) {
-  .hero-title { font-size: 2.2rem !important; }
-}
-@media (max-width: 480px) {
-  .hero-title { font-size: 1.8rem !important; }
-  .navbar .nav-link { font-size: 0.75rem !important; }
+/* =====================================================
+   HAMBURGER BUTTON & ICON
+   =====================================================*/
+.hamburger-btn {
+  background: none;
+  border: none;
+  padding: 6px;
+  cursor: pointer;
+  z-index: 1100;
 }
 
-/* Print — for bill */
+.hamburger-icon {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  width: 24px;
+}
+.hamburger-icon span {
+  display: block;
+  height: 2px;
+  width: 100%;
+  background: #fff;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+/* Animate to X when open */
+.hamburger-icon.open span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+.hamburger-icon.open span:nth-child(2) {
+  opacity: 0;
+}
+.hamburger-icon.open span:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -5px);
+}
+
+/* =====================================================
+   MOBILE MENU OVERLAY
+   =====================================================*/
+.mobile-menu-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 1040;
+}
+
+/* =====================================================
+   MOBILE DROPDOWN MENU
+   =====================================================*/
+.mobile-menu {
+  position: fixed;
+  top: 0;
+  right: -280px;
+  width: 260px;
+  height: 100vh;
+  background: #0A0A0A;
+  border-left: 1px solid #1C1C1C;
+  z-index: 1050;
+  display: flex;
+  flex-direction: column;
+  padding: 80px 28px 32px;
+  gap: 4px;
+  transition: right 0.3s ease;
+  overflow-y: auto;
+}
+.mobile-menu-open {
+  right: 0;
+}
+
+.mobile-menu-link {
+  color: #B3B3B3;
+  text-decoration: none;
+  font-size: 1.05rem;
+  font-weight: 500;
+  padding: 14px 0;
+  border-bottom: 1px solid #1C1C1C;
+  transition: color 0.2s ease;
+}
+.mobile-menu-link:hover {
+  color: #E50914;
+}
+.mobile-menu-link-admin {
+  color: #FFD700 !important;
+  font-weight: 600;
+}
+
+.mobile-menu-divider {
+  height: 1px;
+  background: #1C1C1C;
+  margin: 8px 0;
+}
+
+.mobile-menu-logout {
+  background: none;
+  border: 1px solid #333;
+  color: #B3B3B3;
+  font-size: 0.95rem;
+  padding: 12px 0;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-top: 8px;
+  transition: all 0.2s ease;
+}
+.mobile-menu-logout:hover {
+  background: #1C1C1C;
+  color: #fff;
+}
+
+/* =====================================================
+   RESPONSIVE — Tablet (768px and below)
+   =====================================================*/
+@media (max-width: 768px) {
+  .hero-title { font-size: 2.2rem !important; }
+
+  /* Add side padding to hero section */
+  section.bg-deeper { padding-left: 20px !important; padding-right: 20px !important; }
+
+  /* Remove left border on stat columns (stacked on mobile) */
+  .border-start { border-left: none !important; border-top: 1px solid #1C1C1C; padding-top: 16px; margin-top: 12px; }
+
+  /* Container padding */
+  .container { padding-left: 16px !important; padding-right: 16px !important; }
+}
+
+/* =====================================================
+   RESPONSIVE — Mobile (480px and below)
+   =====================================================*/
+@media (max-width: 480px) {
+  .hero-title { font-size: 1.8rem !important; }
+
+  /* Smaller navbar padding on very small screens */
+  .navbar { padding-left: 12px !important; padding-right: 12px !important; }
+  .navbar .nav-link { font-size: 0.8rem !important; }
+  .brand-logo { font-size: 1.2rem !important; }
+
+  /* Ensure form containers don't overflow */
+  .card { margin-left: 8px; margin-right: 8px; }
+}
+
+/* =====================================================
+   PRINT — for bill
+   =====================================================*/
 @media print {
   .navbar, footer, .btn, .no-print { display: none !important; }
   body { background: #fff !important; color: #000 !important; }
